@@ -1,0 +1,42 @@
+[
+  {
+    "file": "terrain-recipe.json",
+    "ref": {
+      "payloadId": "sha256:9749a181163350ad3562449fe712f3476a509d8d6f136e35bab03ba92940a694",
+      "mediaType": "application/json",
+      "codecId": "catalyst.terrain-recipe.json/draft",
+      "decodedBytes": "10035",
+      "dependencyRefs": []
+    }
+  },
+  {
+    "file": "semantic-catalog.json",
+    "ref": {
+      "payloadId": "sha256:05d0ce8620e069bef9e2778d5d2ca38e38fef39c5d56e69b2e77515dbbd907f7",
+      "mediaType": "application/json",
+      "codecId": "json-utf8/draft",
+      "decodedBytes": "113",
+      "dependencyRefs": []
+    }
+  },
+  {
+    "file": "body-definition.json",
+    "ref": {
+      "payloadId": "sha256:2fda075167ea4f038a42235657b78cecdbf03799e868e5ec48163e40c1ba1a6b",
+      "mediaType": "application/json",
+      "codecId": "json-utf8/draft",
+      "decodedBytes": "2211",
+      "dependencyRefs": []
+    }
+  },
+  {
+    "file": "formation-recipe.json",
+    "ref": {
+      "payloadId": "sha256:fe937842efc1c93363e1965589cb8d88adf1532665fe7ffe49ababe03f26e1bf",
+      "mediaType": "application/json",
+      "codecId": "catalyst.terrain-recipe.json/draft",
+      "decodedBytes": "5225",
+      "dependencyRefs": []
+    }
+  }
+]

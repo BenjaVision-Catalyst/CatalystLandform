@@ -1,0 +1,16 @@
+{
+  "schema": "catalyst.bounded-edit-submission/draft",
+  "commandId": "sampled-add",
+  "payloadId": "sha256:be73bf425cd0f1d3072dcac800ebeab18beb7669392a519ae009fb99f3fc5d0e",
+  "toolContractId": "capturedSculpt",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "timeDomainId": "simulation",
+  "clockEpochId": "epoch-a",
+  "requestedRecovery": {
+    "policyId": "catalyst.recovery.permanent/draft"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "contract": "catalyst.landform/draft",
+  "kind": "capabilities.offer",
+  "applicationMessageId": "recipe-capabilities",
+  "body": {
+    "supportedContracts": [
+      "catalyst.landform/draft"
+    ],
+    "capabilities": [
+      {
+        "id": "catalyst.terrain-recipe",
+        "version": "draft"
+      }
+    ],
+    "installedAssetVariants": [],
+    "requestedRoles": [
+      "render",
+      "collision"
+    ],
+    "recordContracts": [
+      {
+        "contractId": "catalyst.terrain-recipe/draft",
+        "schemaDigest": "sha256:32117170436c1220acc176fd888bfdd61e34b282389a7606ffe619254ed0184c"
+      },
+      {
+        "contractId": "catalyst.bounded-edit-payload/draft",
+        "schemaDigest": "sha256:8739528e6cd1d04aaeb8ea247c999f676e68fdd088a015d664082db9fe45c5a5"
+      }
+    ]
+  }
+}

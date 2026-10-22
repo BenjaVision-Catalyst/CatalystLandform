@@ -1,0 +1,456 @@
+{
+  "schema": "catalyst.terrain-recipe/draft",
+  "recipeId": "moon-recipe",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "revision": "8",
+  "sceneToken": "scene-a",
+  "evaluation": {
+    "domainId": "simulation",
+    "epochId": "epoch-a",
+    "tick": "100"
+  },
+  "radialGuides": {
+    "schema": "catalyst.radial-guides/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "guideSetId": "guides-a",
+    "revision": "3",
+    "centerMeters": [
+      0,
+      0,
+      0
+    ],
+    "measure": "radiusFromDeclaredCenter",
+    "lengthUnit": "meter",
+    "levels": [
+      {
+        "guideId": "outerCore",
+        "name": "outerCore",
+        "radiusMeters": 350
+      },
+      {
+        "guideId": "caveMin",
+        "name": "caveMin",
+        "radiusMeters": 430
+      },
+      {
+        "guideId": "caveMax",
+        "name": "caveMax",
+        "radiusMeters": 570
+      },
+      {
+        "guideId": "surfaceMin",
+        "name": "surfaceMin",
+        "radiusMeters": 580
+      },
+      {
+        "guideId": "surfaceMax",
+        "name": "surfaceMax",
+        "radiusMeters": 640
+      },
+      {
+        "guideId": "oxygenMax",
+        "name": "oxygenMax",
+        "radiusMeters": 800
+      }
+    ],
+    "bands": [
+      {
+        "bandId": "caves",
+        "name": "caves",
+        "minGuideId": "caveMin",
+        "maxGuideId": "caveMax",
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0,
+        "fadePlacement": "inside",
+        "curve": "smoothstep"
+      },
+      {
+        "bandId": "surface",
+        "name": "surface",
+        "minGuideId": "surfaceMin",
+        "maxGuideId": "surfaceMax",
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0,
+        "fadePlacement": "inside",
+        "curve": "smoothstep"
+      }
+    ]
+  },
+  "geology": {
+    "schema": "catalyst.geological-regions/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "regionSetId": "geology-a",
+    "revision": "4",
+    "regions": [
+      {
+        "regionId": "basalt",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -810,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            810,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "limestone",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -810,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            810,
+            810,
+            810
+          ]
+        },
+        "materialId": "limestone",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      }
+    ],
+    "contacts": [
+      {
+        "contactId": "contact-a",
+        "operatorId": "catalyst.contact.plane-partition/draft",
+        "negativeRegionId": "basalt",
+        "positiveRegionId": "limestone",
+        "normal": [
+          1,
+          0,
+          0
+        ],
+        "offsetMeters": 0,
+        "equalityOwner": "negative"
+      }
+    ],
+    "sharedFeatures": [
+      {
+        "featureId": "cave-cross-contact",
+        "operatorId": "catalyst.feature.capsule-cave/draft",
+        "regionIds": [
+          "basalt",
+          "limestone"
+        ],
+        "pointAMeters": [
+          -20,
+          0,
+          520
+        ],
+        "pointBMeters": [
+          20,
+          0,
+          520
+        ],
+        "radiusMeters": 8,
+        "radialBinding": {
+          "bandId": "caves",
+          "use": "placementEnvelope"
+        }
+      }
+    ],
+    "featureOrder": [
+      "cave-cross-contact"
+    ],
+    "uncoveredRegionPolicy": "foundation"
+  },
+  "editPayloadRefs": [
+    {
+      "payloadId": "sha256:da3685a8899ba29c2ca7378c5093666b9dc0eafd1b106824425a2b5dbe7d9e75",
+      "mediaType": "application/json",
+      "codecId": "catalyst.bounded-edit-payload.json/draft",
+      "decodedBytes": "4136",
+      "dependencyRefs": []
+    },
+    {
+      "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f",
+      "mediaType": "application/json",
+      "codecId": "catalyst.bounded-edit-payload.json/draft",
+      "decodedBytes": "1331",
+      "dependencyRefs": []
+    },
+    {
+      "payloadId": "sha256:a1b725a62ed57f6a19a9f763749c9d5ede92f13534b1bd85b3b1209bcfc7af6c",
+      "mediaType": "application/json",
+      "codecId": "catalyst.bounded-edit-payload.json/draft",
+      "decodedBytes": "1319",
+      "dependencyRefs": []
+    }
+  ],
+  "editPlan": {
+    "schema": "catalyst.bounded-edit-plan/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "editPlanId": "edits-a",
+    "revision": "6",
+    "baseFormationRevision": "4",
+    "baselineSceneToken": "formation-a",
+    "edits": [
+      {
+        "editId": "excavate",
+        "orderKey": {
+          "counter": "1",
+          "tieBreaker": "authority-model"
+        },
+        "afterEditId": null,
+        "effectiveTime": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "attachment": "bodyFixed",
+        "operation": {
+          "operatorId": "catalyst.edit.bounded-payload/draft",
+          "payloadId": "sha256:da3685a8899ba29c2ca7378c5093666b9dc0eafd1b106824425a2b5dbe7d9e75"
+        },
+        "recovery": {
+          "policyId": "catalyst.recovery.linear-field/draft",
+          "start": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "0"
+          },
+          "end": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "100"
+          },
+          "channels": [
+            "geometry"
+          ],
+          "validityPolicy": "finiteOnly"
+        },
+        "contributionClip": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "readFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "dirtyBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "evaluationHaloMeters": 1,
+        "hydrologyImpact": "reconcile"
+      },
+      {
+        "editId": "fill",
+        "orderKey": {
+          "counter": "2",
+          "tieBreaker": "authority-model"
+        },
+        "afterEditId": "excavate",
+        "effectiveTime": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "attachment": "bodyFixed",
+        "operation": {
+          "operatorId": "catalyst.edit.bounded-payload/draft",
+          "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f"
+        },
+        "recovery": {
+          "policyId": "catalyst.recovery.permanent/draft"
+        },
+        "contributionClip": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "readFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "dirtyBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "evaluationHaloMeters": 1,
+        "hydrologyImpact": "reconcile"
+      },
+      {
+        "editId": "paint",
+        "orderKey": {
+          "counter": "3",
+          "tieBreaker": "authority-model"
+        },
+        "afterEditId": "fill",
+        "effectiveTime": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "attachment": "bodyFixed",
+        "operation": {
+          "operatorId": "catalyst.edit.bounded-payload/draft",
+          "payloadId": "sha256:a1b725a62ed57f6a19a9f763749c9d5ede92f13534b1bd85b3b1209bcfc7af6c"
+        },
+        "recovery": {
+          "policyId": "catalyst.recovery.permanent/draft"
+        },
+        "contributionClip": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "readFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "dirtyBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "evaluationHaloMeters": 1,
+        "hydrologyImpact": "reconcile"
+      }
+    ]
+  },
+  "foundation": {
+    "radiusGuideId": "surfaceMin",
+    "materialId": "foundation-rock"
+  },
+  "profile": {
+    "profileId": "reference-owned",
+    "lowering": "ownedComposite",
+    "numericProfileId": "catalyst.reference.float64/draft",
+    "channels": [
+      "geometry",
+      "surface",
+      "metadata"
+    ],
+    "boundsPaddingMeters": 2
+  },
+  "maxEnvelopeRadiusMeters": 810
+}

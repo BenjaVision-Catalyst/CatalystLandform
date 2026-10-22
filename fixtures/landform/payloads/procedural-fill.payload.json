@@ -1,0 +1,83 @@
+{
+  "schema": "catalyst.bounded-edit-payload/draft",
+  "recordId": "procedural-fill",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "numericProfileId": "catalyst.reference.float64/draft",
+  "semantics": "singleContribution",
+  "contributionClip": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -3,
+      -3,
+      595
+    ],
+    "maxMeters": [
+      3,
+      3,
+      601
+    ]
+  },
+  "sampleFootprint": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -3,
+      -3,
+      595
+    ],
+    "maxMeters": [
+      3,
+      3,
+      601
+    ]
+  },
+  "readFootprint": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -3,
+      -3,
+      595
+    ],
+    "maxMeters": [
+      3,
+      3,
+      601
+    ]
+  },
+  "dirtyBounds": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -4,
+      -4,
+      594
+    ],
+    "maxMeters": [
+      4,
+      4,
+      602
+    ]
+  },
+  "evaluationHaloMeters": 1,
+  "capture": {
+    "kind": "independent"
+  },
+  "representation": "procedural",
+  "channels": [
+    "geometry",
+    "surface"
+  ],
+  "surfacePolicy": "operatorDefined",
+  "procedure": {
+    "operatorId": "catalyst.edit.sphere-add/draft",
+    "centerMeters": [
+      0,
+      0,
+      598
+    ],
+    "radiusMeters": 1,
+    "materialId": "fill-rock"
+  }
+}

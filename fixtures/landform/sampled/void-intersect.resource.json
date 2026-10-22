@@ -1,0 +1,156 @@
+{
+  "ref": {
+    "payloadId": "sha256:dc7878b5c44a0c2d1f75226992f1a57e0f8e9d5cd1b740b9925eb108eae4f0a5",
+    "mediaType": "application/json",
+    "codecId": "catalyst.bounded-edit-payload.json/draft",
+    "decodedBytes": "2490",
+    "dependencyRefs": [
+      "sha256:5f88e8340d4ff7492d824d8801336fea9b3db6b8d982105fe305aa2f0207e7af"
+    ]
+  },
+  "document": {
+    "schema": "catalyst.bounded-edit-payload/draft",
+    "recordId": "void-intersect",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "numericProfileId": "catalyst.vpp-sampled.float32/draft",
+    "semantics": "singleContribution",
+    "contributionClip": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        -3,
+        -3,
+        595
+      ],
+      "maxMeters": [
+        3,
+        3,
+        601
+      ]
+    },
+    "sampleFootprint": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        -4.0,
+        -4.0,
+        594.0
+      ],
+      "maxMeters": [
+        4.0,
+        4.0,
+        602.0
+      ]
+    },
+    "readFootprint": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        -4.0,
+        -4.0,
+        594.0
+      ],
+      "maxMeters": [
+        4.0,
+        4.0,
+        602.0
+      ]
+    },
+    "dirtyBounds": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        -4,
+        -4,
+        594
+      ],
+      "maxMeters": [
+        4,
+        4,
+        602
+      ]
+    },
+    "evaluationHaloMeters": 1,
+    "capture": {
+      "kind": "predecessorDependent",
+      "sceneToken": "formation-a",
+      "evaluation": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "readRevisions": [
+        {
+          "cellId": "left",
+          "revision": "3"
+        },
+        {
+          "cellId": "right",
+          "revision": "3"
+        }
+      ]
+    },
+    "representation": "sampled",
+    "channels": [
+      "geometry"
+    ],
+    "surfacePolicy": "preserve",
+    "field": {
+      "storage": "sparseMaskedFloat32",
+      "data": {
+        "payloadId": "sha256:5f88e8340d4ff7492d824d8801336fea9b3db6b8d982105fe305aa2f0207e7af",
+        "mediaType": "application/octet-stream",
+        "codecId": "catalyst.bounded-edit.masked-float32-le/draft",
+        "decodedBytes": "1254",
+        "dependencyRefs": []
+      },
+      "originMeters": [
+        0.0,
+        0.0,
+        598.0
+      ],
+      "rotationXYZW": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "spacingMeters": 0.5,
+      "chunkDomain": {
+        "minInclusive": [
+          -1,
+          -1,
+          -1
+        ],
+        "maxExclusive": [
+          1,
+          1,
+          1
+        ]
+      },
+      "chunkCount": 8,
+      "chunkSide": 8,
+      "sampleOrder": "xFastest",
+      "distanceUnit": "gridCell",
+      "interpolation": "vppSampledFloat32NoFMA",
+      "validity": "perChannel512BitMask",
+      "removalConvention": "signedMaxArgumentRestoreBeforeInterpolation",
+      "blend": "intersect",
+      "applyOnVoid": false,
+      "bridgeId": "catalyst.bridge.meter64-cell32/draft"
+    }
+  },
+  "encodedUtf8Base64": "ewogICJzY2hlbWEiOiAiY2F0YWx5c3QuYm91bmRlZC1lZGl0LXBheWxvYWQvZHJhZnQiLAogICJyZWNvcmRJZCI6ICJ2b2lkLWludGVyc2VjdCIsCiAgImNvbnRleHQiOiB7CiAgICAiYm9keUlkIjogIm1vb24tYSIsCiAgICAiYm9keUZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAiZGVmaW5pdGlvblJldmlzaW9uIjogIjEyIgogIH0sCiAgIm51bWVyaWNQcm9maWxlSWQiOiAiY2F0YWx5c3QudnBwLXNhbXBsZWQuZmxvYXQzMi9kcmFmdCIsCiAgInNlbWFudGljcyI6ICJzaW5nbGVDb250cmlidXRpb24iLAogICJjb250cmlidXRpb25DbGlwIjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtMywKICAgICAgLTMsCiAgICAgIDU5NQogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDMsCiAgICAgIDMsCiAgICAgIDYwMQogICAgXQogIH0sCiAgInNhbXBsZUZvb3RwcmludCI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgLTQuMCwKICAgICAgLTQuMCwKICAgICAgNTk0LjAKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICA0LjAsCiAgICAgIDQuMCwKICAgICAgNjAyLjAKICAgIF0KICB9LAogICJyZWFkRm9vdHByaW50IjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtNC4wLAogICAgICAtNC4wLAogICAgICA1OTQuMAogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDQuMCwKICAgICAgNC4wLAogICAgICA2MDIuMAogICAgXQogIH0sCiAgImRpcnR5Qm91bmRzIjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtNCwKICAgICAgLTQsCiAgICAgIDU5NAogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDQsCiAgICAgIDQsCiAgICAgIDYwMgogICAgXQogIH0sCiAgImV2YWx1YXRpb25IYWxvTWV0ZXJzIjogMSwKICAiY2FwdHVyZSI6IHsKICAgICJraW5kIjogInByZWRlY2Vzc29yRGVwZW5kZW50IiwKICAgICJzY2VuZVRva2VuIjogImZvcm1hdGlvbi1hIiwKICAgICJldmFsdWF0aW9uIjogewogICAgICAiZG9tYWluSWQiOiAic2ltdWxhdGlvbiIsCiAgICAgICJlcG9jaElkIjogImVwb2NoLWEiLAogICAgICAidGljayI6ICIwIgogICAgfSwKICAgICJyZWFkUmV2aXNpb25zIjogWwogICAgICB7CiAgICAgICAgImNlbGxJZCI6ICJsZWZ0IiwKICAgICAgICAicmV2aXNpb24iOiAiMyIKICAgICAgfSwKICAgICAgewogICAgICAgICJjZWxsSWQiOiAicmlnaHQiLAogICAgICAgICJyZXZpc2lvbiI6ICIzIgogICAgICB9CiAgICBdCiAgfSwKICAicmVwcmVzZW50YXRpb24iOiAic2FtcGxlZCIsCiAgImNoYW5uZWxzIjogWwogICAgImdlb21ldHJ5IgogIF0sCiAgInN1cmZhY2VQb2xpY3kiOiAicHJlc2VydmUiLAogICJmaWVsZCI6IHsKICAgICJzdG9yYWdlIjogInNwYXJzZU1hc2tlZEZsb2F0MzIiLAogICAgImRhdGEiOiB7CiAgICAgICJwYXlsb2FkSWQiOiAic2hhMjU2OjVmODhlODM0MGQ0ZmY3NDkyZDgyNGQ4ODAxMzM2ZmVhOWIzZGI2YjhkOTgyMTA1ZmUzMDVhYTJmMDIwN2U3YWYiLAogICAgICAibWVkaWFUeXBlIjogImFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbSIsCiAgICAgICJjb2RlY0lkIjogImNhdGFseXN0LmJvdW5kZWQtZWRpdC5tYXNrZWQtZmxvYXQzMi1sZS9kcmFmdCIsCiAgICAgICJkZWNvZGVkQnl0ZXMiOiAiMTI1NCIsCiAgICAgICJkZXBlbmRlbmN5UmVmcyI6IFtdCiAgICB9LAogICAgIm9yaWdpbk1ldGVycyI6IFsKICAgICAgMC4wLAogICAgICAwLjAsCiAgICAgIDU5OC4wCiAgICBdLAogICAgInJvdGF0aW9uWFlaVyI6IFsKICAgICAgMC4wLAogICAgICAwLjAsCiAgICAgIDAuMCwKICAgICAgMS4wCiAgICBdLAogICAgInNwYWNpbmdNZXRlcnMiOiAwLjUsCiAgICAiY2h1bmtEb21haW4iOiB7CiAgICAgICJtaW5JbmNsdXNpdmUiOiBbCiAgICAgICAgLTEsCiAgICAgICAgLTEsCiAgICAgICAgLTEKICAgICAgXSwKICAgICAgIm1heEV4Y2x1c2l2ZSI6IFsKICAgICAgICAxLAogICAgICAgIDEsCiAgICAgICAgMQogICAgICBdCiAgICB9LAogICAgImNodW5rQ291bnQiOiA4LAogICAgImNodW5rU2lkZSI6IDgsCiAgICAic2FtcGxlT3JkZXIiOiAieEZhc3Rlc3QiLAogICAgImRpc3RhbmNlVW5pdCI6ICJncmlkQ2VsbCIsCiAgICAiaW50ZXJwb2xhdGlvbiI6ICJ2cHBTYW1wbGVkRmxvYXQzMk5vRk1BIiwKICAgICJ2YWxpZGl0eSI6ICJwZXJDaGFubmVsNTEyQml0TWFzayIsCiAgICAicmVtb3ZhbENvbnZlbnRpb24iOiAic2lnbmVkTWF4QXJndW1lbnRSZXN0b3JlQmVmb3JlSW50ZXJwb2xhdGlvbiIsCiAgICAiYmxlbmQiOiAiaW50ZXJzZWN0IiwKICAgICJhcHBseU9uVm9pZCI6IGZhbHNlLAogICAgImJyaWRnZUlkIjogImNhdGFseXN0LmJyaWRnZS5tZXRlcjY0LWNlbGwzMi9kcmFmdCIKICB9Cn0K",
+  "dependencies": [
+    {
+      "ref": {
+        "payloadId": "sha256:5f88e8340d4ff7492d824d8801336fea9b3db6b8d982105fe305aa2f0207e7af",
+        "mediaType": "application/octet-stream",
+        "codecId": "catalyst.bounded-edit.masked-float32-le/draft",
+        "decodedBytes": "1254",
+        "dependencyRefs": []
+      },
+      "encodedBase64": "Q0xCRQAAAAH///////////////8BAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwPwAAAAAAAOA/AgAIAAAA////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP////8AAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOtBLk3cBqOv4oxxQUvUP8XuZ65z0bAEME0a+T1IJP4U"
+    }
+  ]
+}

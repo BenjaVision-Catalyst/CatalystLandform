@@ -1,0 +1,481 @@
+{
+  "schema": "catalyst.vpp-recipe-plan/draft",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "sceneToken": "scene-a",
+  "sourceRecipeDigest": "sha256:8633c68239552a97233b6efb4dec293bd83621e244945c8763bd78689bc79c61",
+  "evaluation": {
+    "domainId": "simulation",
+    "epochId": "epoch-a",
+    "tick": "50"
+  },
+  "numericProfileId": "catalyst.reference.float64/draft",
+  "centerMeters": [
+    0,
+    0,
+    0
+  ],
+  "geometryBounds": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -812,
+      -812,
+      -812
+    ],
+    "maxMeters": [
+      812,
+      812,
+      812
+    ]
+  },
+  "foundation": {
+    "radiusMeters": 580,
+    "materialId": "foundation-rock"
+  },
+  "resolvedBands": [
+    {
+      "bandId": "caves",
+      "lowerMeters": 430,
+      "upperMeters": 570,
+      "lowerFadeMeters": 0,
+      "upperFadeMeters": 0
+    },
+    {
+      "bandId": "surface",
+      "lowerMeters": 580,
+      "upperMeters": 640,
+      "lowerFadeMeters": 0,
+      "upperFadeMeters": 0
+    }
+  ],
+  "regions": [
+    {
+      "regionId": "basalt",
+      "domainBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -810,
+          -810,
+          -810
+        ],
+        "maxMeters": [
+          810,
+          810,
+          810
+        ]
+      },
+      "materialId": "basalt",
+      "structuralOriginMeters": [
+        0,
+        0,
+        0
+      ],
+      "radiusMeters": 600.0,
+      "noise": {
+        "operatorId": "catalyst.noise.none/draft"
+      }
+    },
+    {
+      "regionId": "limestone",
+      "domainBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -810,
+          -810,
+          -810
+        ],
+        "maxMeters": [
+          810,
+          810,
+          810
+        ]
+      },
+      "materialId": "limestone",
+      "structuralOriginMeters": [
+        0,
+        0,
+        0
+      ],
+      "radiusMeters": 600.0,
+      "noise": {
+        "operatorId": "catalyst.noise.none/draft"
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "contactId": "contact-a",
+      "operatorId": "catalyst.contact.plane-partition/draft",
+      "negativeRegionId": "basalt",
+      "positiveRegionId": "limestone",
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "offsetMeters": 0,
+      "equalityOwner": "negative"
+    }
+  ],
+  "features": [
+    {
+      "featureId": "cave-cross-contact",
+      "regionIds": [
+        "basalt",
+        "limestone"
+      ],
+      "pointAMeters": [
+        -20,
+        0,
+        520
+      ],
+      "pointBMeters": [
+        20,
+        0,
+        520
+      ],
+      "radiusMeters": 8,
+      "radialUse": "placementEnvelope",
+      "band": {
+        "bandId": "caves",
+        "lowerMeters": 430,
+        "upperMeters": 570,
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0
+      }
+    }
+  ],
+  "edits": [
+    {
+      "editId": "excavate",
+      "orderKey": {
+        "counter": "9223372036854775808",
+        "tieBreaker": "authority-a"
+      },
+      "afterEditId": null,
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.sphere-remove/draft",
+        "centerMeters": [
+          0,
+          0,
+          598
+        ],
+        "radiusMeters": 2
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.linear-field/draft",
+        "start": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "end": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "100"
+        },
+        "channels": [
+          "geometry"
+        ],
+        "validityPolicy": "finiteOnly"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    },
+    {
+      "editId": "fill",
+      "orderKey": {
+        "counter": "9223372036854775809",
+        "tieBreaker": "authority-a"
+      },
+      "afterEditId": "excavate",
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.sphere-add/draft",
+        "centerMeters": [
+          0,
+          0,
+          598
+        ],
+        "radiusMeters": 1,
+        "materialId": "fill-rock"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    },
+    {
+      "editId": "paint",
+      "orderKey": {
+        "counter": "9223372036854775810",
+        "tieBreaker": "authority-a"
+      },
+      "afterEditId": "fill",
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.paint-volume/draft",
+        "centerMeters": [
+          0,
+          0,
+          598
+        ],
+        "radiusMeters": 1,
+        "materialId": "blue-paint"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    }
+  ],
+  "cacheableEditPrefix": [],
+  "editPayloads": [],
+  "guideConsumers": {
+    "caveMax": [
+      "caves"
+    ],
+    "caveMin": [
+      "caves"
+    ],
+    "caves": [
+      "cave-cross-contact"
+    ],
+    "outerCore": [],
+    "oxygenMax": [],
+    "surface": [
+      "basalt",
+      "limestone"
+    ],
+    "surfaceMax": [
+      "surface"
+    ],
+    "surfaceMin": [
+      "foundation",
+      "surface"
+    ]
+  },
+  "mappings": [
+    {
+      "sourceId": "foundation",
+      "kernelId": "catalyst.formation.sphere/draft",
+      "owner": "CatalystComposite",
+      "stage": "foundation",
+      "nativeCandidate": "VolumeGraphStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "basalt",
+      "kernelId": "catalyst.formation.radial-surface/draft",
+      "owner": "CatalystComposite",
+      "stage": "regions",
+      "nativeCandidate": "VolumeGraphStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "limestone",
+      "kernelId": "catalyst.formation.radial-surface/draft",
+      "owner": "CatalystComposite",
+      "stage": "regions",
+      "nativeCandidate": "VolumeGraphStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "contact-a",
+      "kernelId": "catalyst.contact.plane-partition/draft",
+      "owner": "CatalystComposite",
+      "stage": "contacts",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "cave-cross-contact",
+      "kernelId": "catalyst.feature.capsule-cave/draft",
+      "owner": "CatalystComposite",
+      "stage": "naturalFeatures",
+      "nativeCandidate": "VolumeSplineStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "excavate",
+      "kernelId": "catalyst.edit.sphere-remove/draft",
+      "owner": "CatalystComposite",
+      "stage": "orderedEdits",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "fill",
+      "kernelId": "catalyst.edit.sphere-add/draft",
+      "owner": "CatalystComposite",
+      "stage": "orderedEdits",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "paint",
+      "kernelId": "catalyst.edit.paint-volume/draft",
+      "owner": "CatalystComposite",
+      "stage": "orderedEdits",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    }
+  ],
+  "vpp": {
+    "runtime": "FVoxelVolumeStampRuntime",
+    "layer": "CatalystCommittedTerrain",
+    "priority": 0,
+    "queryPaths": [
+      "bulk",
+      "sparse"
+    ],
+    "outputMode": "finalComposed",
+    "applyStockBlendAfter": false,
+    "metersToUnrealUnits": 100,
+    "nativeReadiness": "unverified"
+  },
+  "activationRequirements": [
+    "mesh",
+    "collision",
+    "water",
+    "ecosystem"
+  ]
+}

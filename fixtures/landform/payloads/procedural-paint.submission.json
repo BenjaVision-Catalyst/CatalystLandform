@@ -1,0 +1,16 @@
+{
+  "schema": "catalyst.bounded-edit-submission/draft",
+  "commandId": "procedural-paint",
+  "payloadId": "sha256:a1b725a62ed57f6a19a9f763749c9d5ede92f13534b1bd85b3b1209bcfc7af6c",
+  "toolContractId": "fixedBrush",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "timeDomainId": "simulation",
+  "clockEpochId": "epoch-a",
+  "requestedRecovery": {
+    "policyId": "catalyst.recovery.permanent/draft"
+  }
+}

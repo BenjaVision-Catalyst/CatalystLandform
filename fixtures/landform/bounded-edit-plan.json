@@ -1,0 +1,231 @@
+{
+  "schema": "catalyst.bounded-edit-plan/draft",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "editPlanId": "edits-a",
+  "revision": "6",
+  "baseFormationRevision": "4",
+  "baselineSceneToken": "formation-a",
+  "edits": [
+    {
+      "editId": "excavate",
+      "orderKey": {
+        "counter": "9223372036854775808",
+        "tieBreaker": "authority-a"
+      },
+      "afterEditId": null,
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.sphere-remove/draft",
+        "centerMeters": [
+          0,
+          0,
+          598
+        ],
+        "radiusMeters": 2
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.linear-field/draft",
+        "start": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "end": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "100"
+        },
+        "channels": [
+          "geometry"
+        ],
+        "validityPolicy": "finiteOnly"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    },
+    {
+      "editId": "fill",
+      "orderKey": {
+        "counter": "9223372036854775809",
+        "tieBreaker": "authority-a"
+      },
+      "afterEditId": "excavate",
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.sphere-add/draft",
+        "centerMeters": [
+          0,
+          0,
+          598
+        ],
+        "radiusMeters": 1,
+        "materialId": "fill-rock"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    },
+    {
+      "editId": "paint",
+      "orderKey": {
+        "counter": "9223372036854775810",
+        "tieBreaker": "authority-a"
+      },
+      "afterEditId": "fill",
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.paint-volume/draft",
+        "centerMeters": [
+          0,
+          0,
+          598
+        ],
+        "radiusMeters": 1,
+        "materialId": "blue-paint"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    }
+  ]
+}

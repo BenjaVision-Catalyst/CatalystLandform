@@ -1,0 +1,11 @@
+{
+  "scope": "Read-revision oracle only; not a transaction/authorization implementation",
+  "firstCommandId": "concurrent-0",
+  "firstCommitCellRevisions": {
+    "terrain-cell-a": "4",
+    "terrain-cell-b": "4"
+  },
+  "competingCommandId": "concurrent-1",
+  "expectedFaultCode": "READ_CONFLICT",
+  "requires": "recaptureAgainstAcceptedPredecessor"
+}

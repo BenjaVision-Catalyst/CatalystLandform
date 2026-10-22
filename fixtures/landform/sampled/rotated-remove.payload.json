@@ -1,0 +1,132 @@
+{
+  "schema": "catalyst.bounded-edit-payload/draft",
+  "recordId": "rotated-remove",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "numericProfileId": "catalyst.vpp-sampled.float32/draft",
+  "semantics": "singleContribution",
+  "contributionClip": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      99999.0,
+      -23001.0,
+      69999.0
+    ],
+    "maxMeters": [
+      100001.0,
+      -22999.0,
+      70001.0
+    ]
+  },
+  "sampleFootprint": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      99994.34314575052,
+      -23005.656854249493,
+      69996.0
+    ],
+    "maxMeters": [
+      100005.65685424948,
+      -22994.343145750507,
+      70004.0
+    ]
+  },
+  "readFootprint": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      99994.34314575052,
+      -23005.656854249493,
+      69996.0
+    ],
+    "maxMeters": [
+      100005.65685424948,
+      -22994.343145750507,
+      70004.0
+    ]
+  },
+  "dirtyBounds": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      99998.0,
+      -23002.0,
+      69998.0
+    ],
+    "maxMeters": [
+      100002.0,
+      -22998.0,
+      70002.0
+    ]
+  },
+  "evaluationHaloMeters": 1,
+  "capture": {
+    "kind": "predecessorDependent",
+    "sceneToken": "formation-a",
+    "evaluation": {
+      "domainId": "simulation",
+      "epochId": "epoch-a",
+      "tick": "0"
+    },
+    "readRevisions": [
+      {
+        "cellId": "left",
+        "revision": "3"
+      },
+      {
+        "cellId": "right",
+        "revision": "3"
+      }
+    ]
+  },
+  "representation": "sampled",
+  "channels": [
+    "geometry"
+  ],
+  "surfacePolicy": "preserve",
+  "field": {
+    "storage": "sparseMaskedFloat32",
+    "data": {
+      "payloadId": "sha256:dfd7f2f58732eda3eeeda1e2ba7cae7f3000337dcfb871a57914870fd324df5e",
+      "mediaType": "application/octet-stream",
+      "codecId": "catalyst.bounded-edit.masked-float32-le/draft",
+      "decodedBytes": "34022",
+      "dependencyRefs": []
+    },
+    "originMeters": [
+      100000.0,
+      -23000.0,
+      70000.0
+    ],
+    "rotationXYZW": [
+      0.0,
+      0.0,
+      0.3826834323650898,
+      0.9238795325112867
+    ],
+    "spacingMeters": 0.5,
+    "chunkDomain": {
+      "minInclusive": [
+        -1,
+        -1,
+        -1
+      ],
+      "maxExclusive": [
+        1,
+        1,
+        1
+      ]
+    },
+    "chunkCount": 8,
+    "chunkSide": 8,
+    "sampleOrder": "xFastest",
+    "distanceUnit": "gridCell",
+    "interpolation": "vppSampledFloat32NoFMA",
+    "validity": "perChannel512BitMask",
+    "removalConvention": "signedMaxArgumentRestoreBeforeInterpolation",
+    "blend": "remove",
+    "applyOnVoid": false,
+    "bridgeId": "catalyst.bridge.meter64-cell32/draft"
+  }
+}

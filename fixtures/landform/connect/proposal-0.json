@@ -1,0 +1,104 @@
+{
+  "contract": "catalyst.landform/draft",
+  "kind": "edit.propose",
+  "applicationMessageId": "proposal-0",
+  "sessionId": "session-a",
+  "body": {
+    "proposal": {
+      "bodyId": "moon-a",
+      "commandId": "concurrent-0",
+      "toolId": "catalyst.recipe.brush",
+      "toolVersion": "draft",
+      "adapterProfileId": "catalyst.recipe.brush/draft",
+      "observedSceneToken": "formation-a",
+      "observedView": {
+        "viewId": "formation-view",
+        "bodyId": "moon-a",
+        "definitionRevision": "12",
+        "regions": [
+          {
+            "cellId": "terrain-cell-a",
+            "revision": "3"
+          },
+          {
+            "cellId": "terrain-cell-b",
+            "revision": "3"
+          }
+        ],
+        "evaluation": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "trajectoryRevision": "1",
+        "datasetRoots": {
+          "terrain": "sha256:fe937842efc1c93363e1965589cb8d88adf1532665fe7ffe49ababe03f26e1bf"
+        }
+      },
+      "readFootprint": [
+        {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        }
+      ],
+      "writeFootprint": [
+        {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        }
+      ],
+      "operation": {
+        "family": "operator",
+        "operatorId": "catalyst.edit.sphere-remove/draft",
+        "version": "draft",
+        "parameterSchemaId": "catalyst.edit.sphere-remove.params/draft",
+        "parameters": {
+          "centerMeters": [
+            0,
+            0,
+            598
+          ],
+          "radiusMeters": 2
+        }
+      },
+      "recoveryRequest": {
+        "policyId": "catalyst.recovery.linear-field/draft",
+        "parameters": {
+          "start": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "0"
+          },
+          "end": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "100"
+          },
+          "validityPolicy": "finiteOnly"
+        },
+        "channelIds": [
+          "geometry"
+        ]
+      },
+      "proposalDigest": "sha256:59ae46f752e9fdbad7ec434343110e4fd85aac929b3a07cdff42b1ea4336edd0"
+    }
+  }
+}

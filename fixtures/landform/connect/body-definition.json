@@ -1,0 +1,101 @@
+{
+  "schema": "catalyst.body/draft",
+  "bodyId": "moon-a",
+  "revision": "12",
+  "bodyKind": "moon",
+  "bodyFrameId": "moon-fixed",
+  "handedness": "right",
+  "axisConvention": "body.xyz/draft",
+  "lengthUnit": "meter",
+  "bodySeed64": "123",
+  "seedDerivationId": "catalyst.seed.explicit/draft",
+  "envelope": {
+    "centerMeters": [
+      0,
+      0,
+      0
+    ],
+    "radiusMeters": 810
+  },
+  "semanticCatalog": {
+    "payloadId": "sha256:05d0ce8620e069bef9e2778d5d2ca38e38fef39c5d56e69b2e77515dbbd907f7",
+    "mediaType": "application/json",
+    "codecId": "json-utf8/draft",
+    "decodedBytes": "113",
+    "dependencyRefs": []
+  },
+  "requiredCapabilities": [
+    {
+      "id": "catalyst.terrain-recipe",
+      "version": "draft"
+    }
+  ],
+  "inputSlots": {
+    "landformRecipe": {
+      "channel": "orderedOperators",
+      "contractId": "catalyst.terrain-recipe/draft",
+      "unit": "program"
+    }
+  },
+  "nodes": [
+    {
+      "nodeId": "terrain",
+      "operatorId": "catalyst.terrain-recipe.evaluate",
+      "operatorVersion": "draft",
+      "parameterSchemaId": "catalyst.terrain-recipe.evaluate.params/draft",
+      "numericProfileId": "catalyst.reference.float64/draft",
+      "parameters": {
+        "recipeSlotId": "landformRecipe"
+      },
+      "transform": {
+        "frameId": "moon-fixed",
+        "translationMeters": [
+          0,
+          0,
+          0
+        ],
+        "rotationXYZW": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "inputs": {
+        "recipe": {
+          "slotId": "landformRecipe"
+        }
+      },
+      "outputs": {
+        "field": {
+          "channel": "geometry",
+          "contractId": "catalyst.field/draft",
+          "unit": "meter"
+        },
+        "surface": {
+          "channel": "surface",
+          "contractId": "catalyst.surface/draft",
+          "unit": "semantic-id"
+        }
+      },
+      "support": {
+        "kind": "global"
+      },
+      "resourceRefs": []
+    }
+  ],
+  "roots": {
+    "geometry": {
+      "nodeId": "terrain",
+      "port": "field"
+    },
+    "surface": {
+      "nodeId": "terrain",
+      "port": "surface"
+    }
+  },
+  "requiredChannels": [
+    "geometry",
+    "surface"
+  ]
+}

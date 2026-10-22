@@ -1,0 +1,233 @@
+{
+  "schema": "catalyst.terrain-recipe/draft",
+  "recipeId": "moon-recipe",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "revision": "8",
+  "sceneToken": "scene-a",
+  "evaluation": {
+    "domainId": "simulation",
+    "epochId": "epoch-a",
+    "tick": "0"
+  },
+  "radialGuides": {
+    "schema": "catalyst.radial-guides/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "guideSetId": "guides-a",
+    "revision": "3",
+    "centerMeters": [
+      0,
+      0,
+      0
+    ],
+    "measure": "radiusFromDeclaredCenter",
+    "lengthUnit": "meter",
+    "levels": [
+      {
+        "guideId": "outerCore",
+        "name": "outerCore",
+        "radiusMeters": 350
+      },
+      {
+        "guideId": "caveMin",
+        "name": "caveMin",
+        "radiusMeters": 430
+      },
+      {
+        "guideId": "caveMax",
+        "name": "caveMax",
+        "radiusMeters": 570
+      },
+      {
+        "guideId": "surfaceMin",
+        "name": "surfaceMin",
+        "radiusMeters": 580
+      },
+      {
+        "guideId": "surfaceMax",
+        "name": "surfaceMax",
+        "radiusMeters": 640
+      },
+      {
+        "guideId": "oxygenMax",
+        "name": "oxygenMax",
+        "radiusMeters": 800
+      }
+    ],
+    "bands": [
+      {
+        "bandId": "caves",
+        "name": "caves",
+        "minGuideId": "caveMin",
+        "maxGuideId": "caveMax",
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0,
+        "fadePlacement": "inside",
+        "curve": "smoothstep"
+      },
+      {
+        "bandId": "surface",
+        "name": "surface",
+        "minGuideId": "surfaceMin",
+        "maxGuideId": "surfaceMax",
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0,
+        "fadePlacement": "inside",
+        "curve": "smoothstep"
+      }
+    ]
+  },
+  "geology": {
+    "schema": "catalyst.geological-regions/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "regionSetId": "geology-a",
+    "revision": "4",
+    "regions": [
+      {
+        "regionId": "basalt",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -810,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            810,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "limestone",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -810,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            810,
+            810,
+            810
+          ]
+        },
+        "materialId": "limestone",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      }
+    ],
+    "contacts": [
+      {
+        "contactId": "contact-a",
+        "operatorId": "catalyst.contact.plane-partition/draft",
+        "negativeRegionId": "basalt",
+        "positiveRegionId": "limestone",
+        "normal": [
+          1,
+          0,
+          0
+        ],
+        "offsetMeters": 0,
+        "equalityOwner": "negative"
+      }
+    ],
+    "sharedFeatures": [
+      {
+        "featureId": "cave-cross-contact",
+        "operatorId": "catalyst.feature.capsule-cave/draft",
+        "regionIds": [
+          "basalt",
+          "limestone"
+        ],
+        "pointAMeters": [
+          -10,
+          0,
+          578
+        ],
+        "pointBMeters": [
+          10,
+          0,
+          578
+        ],
+        "radiusMeters": 20,
+        "radialBinding": {
+          "bandId": "caves",
+          "use": "geometricConstraint"
+        }
+      }
+    ],
+    "featureOrder": [
+      "cave-cross-contact"
+    ],
+    "uncoveredRegionPolicy": "foundation"
+  },
+  "editPayloadRefs": [],
+  "editPlan": {
+    "schema": "catalyst.bounded-edit-plan/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "editPlanId": "edits-a",
+    "revision": "6",
+    "baseFormationRevision": "4",
+    "baselineSceneToken": "formation-a",
+    "edits": []
+  },
+  "foundation": {
+    "radiusGuideId": "surfaceMin",
+    "materialId": "foundation-rock"
+  },
+  "profile": {
+    "profileId": "reference-owned",
+    "lowering": "ownedComposite",
+    "numericProfileId": "catalyst.reference.float64/draft",
+    "channels": [
+      "geometry",
+      "surface",
+      "metadata"
+    ],
+    "boundsPaddingMeters": 2
+  },
+  "maxEnvelopeRadiusMeters": 810
+}

@@ -1,0 +1,95 @@
+{
+  "recipes": [
+    "moon-base",
+    "moon-full",
+    "moon-half",
+    "moon-recovered",
+    "moon-translated",
+    "large-translated",
+    "owned-noise",
+    "cave-clipped-to-band",
+    "many-regions"
+  ],
+  "negativeCases": [
+    {
+      "file": "negative/missing-guide.json",
+      "code": "GUIDE_MISSING"
+    },
+    {
+      "file": "negative/reversed-band.json",
+      "code": "BAND_REVERSED"
+    },
+    {
+      "file": "negative/zero-normalization.json",
+      "code": "ZERO_WIDTH_NORMALIZATION"
+    },
+    {
+      "file": "negative/duplicate-guide-name.json",
+      "code": "DUPLICATE_GUIDE_NAME"
+    },
+    {
+      "file": "negative/wrong-frame.json",
+      "code": "FRAME_MISMATCH"
+    },
+    {
+      "file": "negative/wrong-owner.json",
+      "code": "CONTEXT_MISMATCH"
+    },
+    {
+      "file": "negative/overlap-without-contact.json",
+      "code": "AMBIGUOUS_REGION_OVERLAP"
+    },
+    {
+      "file": "negative/duplicate-feature.json",
+      "code": "DUPLICATE_FEATURE"
+    },
+    {
+      "file": "negative/missing-feature-region.json",
+      "code": "FEATURE_REGION"
+    },
+    {
+      "file": "negative/cave-outside-envelope.json",
+      "code": "CAVE_PLACEMENT_ENVELOPE"
+    },
+    {
+      "file": "negative/wrong-predecessor.json",
+      "code": "EDIT_PREDECESSOR"
+    },
+    {
+      "file": "negative/wrong-order.json",
+      "code": "EDIT_ORDER"
+    },
+    {
+      "file": "negative/dirty-halo.json",
+      "code": "DIRTY_HALO"
+    },
+    {
+      "file": "negative/clipped-brush.json",
+      "code": "EDIT_SHAPE_CLIPPED"
+    },
+    {
+      "file": "negative/stale-formation.json",
+      "code": "BASE_FORMATION_MISMATCH"
+    },
+    {
+      "file": "negative/wrong-time-epoch.json",
+      "code": "TIME_DOMAIN"
+    },
+    {
+      "file": "negative/paint-recovery.json",
+      "code": "RECOVERY_CHANNEL_UNSUPPORTED"
+    },
+    {
+      "file": "negative/unsupported-operator.json",
+      "code": "SCHEMA"
+    },
+    {
+      "file": "negative/unknown-property.json",
+      "code": "SCHEMA"
+    },
+    {
+      "file": "negative/uint64-overflow.json",
+      "code": "SCHEMA"
+    }
+  ]
+}

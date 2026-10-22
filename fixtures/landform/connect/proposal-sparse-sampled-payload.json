@@ -1,0 +1,103 @@
+{
+  "contract": "catalyst.landform/draft",
+  "kind": "edit.propose",
+  "applicationMessageId": "native-sampled-payload-proposal",
+  "sessionId": "session-a",
+  "body": {
+    "proposal": {
+      "bodyId": "moon-a",
+      "commandId": "native-sampled-proposal",
+      "toolId": "catalyst.capturedSculpt",
+      "toolVersion": "draft",
+      "adapterProfileId": "catalyst.composition.meter64-cell32/draft",
+      "observedSceneToken": "formation-a",
+      "observedView": {
+        "viewId": "formation-view",
+        "bodyId": "moon-a",
+        "definitionRevision": "12",
+        "regions": [
+          {
+            "cellId": "left",
+            "revision": "3"
+          },
+          {
+            "cellId": "right",
+            "revision": "3"
+          }
+        ],
+        "evaluation": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "trajectoryRevision": "1",
+        "datasetRoots": {
+          "terrain": "sha256:fe937842efc1c93363e1965589cb8d88adf1532665fe7ffe49ababe03f26e1bf"
+        }
+      },
+      "readFootprint": [
+        {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4.0,
+            -4.0,
+            594.0
+          ],
+          "maxMeters": [
+            4.0,
+            4.0,
+            602.0
+          ]
+        }
+      ],
+      "writeFootprint": [
+        {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        }
+      ],
+      "operation": {
+        "family": "contribution",
+        "semanticsId": "catalyst.bounded-edit-payload/draft",
+        "payload": {
+          "payloadId": "sha256:561753a40b1b84c8153fb68129b8a039eb760b0b9f0de9cfa7d79bd56f7c8bc6",
+          "mediaType": "application/json",
+          "codecId": "catalyst.bounded-edit-payload.json/draft",
+          "decodedBytes": "2489",
+          "dependencyRefs": [
+            "sha256:c73eba1aba60062312cf48e0633e5ec2114688a542d594895deb4b8f599cf767"
+          ]
+        }
+      },
+      "recoveryRequest": {
+        "policyId": "catalyst.recovery.linear-field/draft",
+        "parameters": {
+          "start": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "0"
+          },
+          "end": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "100"
+          },
+          "validityPolicy": "finiteOnly"
+        },
+        "channelIds": [
+          "geometry"
+        ]
+      },
+      "proposalDigest": "sha256:785398a62aaed187f2acbcf74c2d4c7c30b8606bf8716d8c243ffb91946171cf"
+    }
+  }
+}

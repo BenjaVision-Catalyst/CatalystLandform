@@ -1,0 +1,91 @@
+{
+  "ref": {
+    "payloadId": "sha256:877486ba073c89938e564b4d1fb47a3e748b9184171bcbcf3feeb50ed1b3556e",
+    "mediaType": "application/json",
+    "codecId": "catalyst.bounded-edit-payload.json/draft",
+    "decodedBytes": "1295",
+    "dependencyRefs": []
+  },
+  "document": {
+    "schema": "catalyst.bounded-edit-payload/draft",
+    "recordId": "procedural-remote",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "numericProfileId": "catalyst.reference.float64/draft",
+    "semantics": "singleContribution",
+    "contributionClip": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        27,
+        -3,
+        595
+      ],
+      "maxMeters": [
+        33,
+        3,
+        601
+      ]
+    },
+    "sampleFootprint": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        27,
+        -3,
+        595
+      ],
+      "maxMeters": [
+        33,
+        3,
+        601
+      ]
+    },
+    "readFootprint": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        27,
+        -3,
+        595
+      ],
+      "maxMeters": [
+        33,
+        3,
+        601
+      ]
+    },
+    "dirtyBounds": {
+      "frameId": "moon-fixed",
+      "minMeters": [
+        26,
+        -4,
+        594
+      ],
+      "maxMeters": [
+        34,
+        4,
+        602
+      ]
+    },
+    "evaluationHaloMeters": 1,
+    "capture": {
+      "kind": "independent"
+    },
+    "representation": "procedural",
+    "channels": [
+      "geometry"
+    ],
+    "surfacePolicy": "operatorDefined",
+    "procedure": {
+      "operatorId": "catalyst.edit.sphere-remove/draft",
+      "centerMeters": [
+        30,
+        0,
+        598
+      ],
+      "radiusMeters": 2
+    }
+  },
+  "encodedUtf8Base64": "ewogICJzY2hlbWEiOiAiY2F0YWx5c3QuYm91bmRlZC1lZGl0LXBheWxvYWQvZHJhZnQiLAogICJyZWNvcmRJZCI6ICJwcm9jZWR1cmFsLXJlbW90ZSIsCiAgImNvbnRleHQiOiB7CiAgICAiYm9keUlkIjogIm1vb24tYSIsCiAgICAiYm9keUZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAiZGVmaW5pdGlvblJldmlzaW9uIjogIjEyIgogIH0sCiAgIm51bWVyaWNQcm9maWxlSWQiOiAiY2F0YWx5c3QucmVmZXJlbmNlLmZsb2F0NjQvZHJhZnQiLAogICJzZW1hbnRpY3MiOiAic2luZ2xlQ29udHJpYnV0aW9uIiwKICAiY29udHJpYnV0aW9uQ2xpcCI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgMjcsCiAgICAgIC0zLAogICAgICA1OTUKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICAzMywKICAgICAgMywKICAgICAgNjAxCiAgICBdCiAgfSwKICAic2FtcGxlRm9vdHByaW50IjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAyNywKICAgICAgLTMsCiAgICAgIDU5NQogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDMzLAogICAgICAzLAogICAgICA2MDEKICAgIF0KICB9LAogICJyZWFkRm9vdHByaW50IjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAyNywKICAgICAgLTMsCiAgICAgIDU5NQogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDMzLAogICAgICAzLAogICAgICA2MDEKICAgIF0KICB9LAogICJkaXJ0eUJvdW5kcyI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgMjYsCiAgICAgIC00LAogICAgICA1OTQKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICAzNCwKICAgICAgNCwKICAgICAgNjAyCiAgICBdCiAgfSwKICAiZXZhbHVhdGlvbkhhbG9NZXRlcnMiOiAxLAogICJjYXB0dXJlIjogewogICAgImtpbmQiOiAiaW5kZXBlbmRlbnQiCiAgfSwKICAicmVwcmVzZW50YXRpb24iOiAicHJvY2VkdXJhbCIsCiAgImNoYW5uZWxzIjogWwogICAgImdlb21ldHJ5IgogIF0sCiAgInN1cmZhY2VQb2xpY3kiOiAib3BlcmF0b3JEZWZpbmVkIiwKICAicHJvY2VkdXJlIjogewogICAgIm9wZXJhdG9ySWQiOiAiY2F0YWx5c3QuZWRpdC5zcGhlcmUtcmVtb3ZlL2RyYWZ0IiwKICAgICJjZW50ZXJNZXRlcnMiOiBbCiAgICAgIDMwLAogICAgICAwLAogICAgICA1OTgKICAgIF0sCiAgICAicmFkaXVzTWV0ZXJzIjogMgogIH0KfQo="
+}

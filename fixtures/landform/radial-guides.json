@@ -1,0 +1,71 @@
+{
+  "schema": "catalyst.radial-guides/draft",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "guideSetId": "guides-a",
+  "revision": "3",
+  "centerMeters": [
+    0,
+    0,
+    0
+  ],
+  "measure": "radiusFromDeclaredCenter",
+  "lengthUnit": "meter",
+  "levels": [
+    {
+      "guideId": "outerCore",
+      "name": "outerCore",
+      "radiusMeters": 350
+    },
+    {
+      "guideId": "caveMin",
+      "name": "caveMin",
+      "radiusMeters": 430
+    },
+    {
+      "guideId": "caveMax",
+      "name": "caveMax",
+      "radiusMeters": 570
+    },
+    {
+      "guideId": "surfaceMin",
+      "name": "surfaceMin",
+      "radiusMeters": 580
+    },
+    {
+      "guideId": "surfaceMax",
+      "name": "surfaceMax",
+      "radiusMeters": 640
+    },
+    {
+      "guideId": "oxygenMax",
+      "name": "oxygenMax",
+      "radiusMeters": 800
+    }
+  ],
+  "bands": [
+    {
+      "bandId": "caves",
+      "name": "caves",
+      "minGuideId": "caveMin",
+      "maxGuideId": "caveMax",
+      "lowerFadeMeters": 0,
+      "upperFadeMeters": 0,
+      "fadePlacement": "inside",
+      "curve": "smoothstep"
+    },
+    {
+      "bandId": "surface",
+      "name": "surface",
+      "minGuideId": "surfaceMin",
+      "maxGuideId": "surfaceMax",
+      "lowerFadeMeters": 0,
+      "upperFadeMeters": 0,
+      "fadePlacement": "inside",
+      "curve": "smoothstep"
+    }
+  ]
+}

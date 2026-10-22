@@ -1,0 +1,8 @@
+RwSimpleProjectLoadComponentV2 {
+    #name : 'Core',
+    #condition : 'common',
+    #projectNames : [ ],
+    #componentNames : [ ],
+    #packageNames : [ 'BVC-Landform-Core' ],
+    #comment : 'Requires NeoJSON and the documented host numeric/hash protocols; GemStone execution is not yet qualified'
+}

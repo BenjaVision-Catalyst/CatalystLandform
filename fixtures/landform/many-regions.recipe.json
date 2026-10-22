@@ -1,0 +1,7813 @@
+{
+  "schema": "catalyst.terrain-recipe/draft",
+  "recipeId": "moon-recipe",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "revision": "8",
+  "sceneToken": "scene-a",
+  "evaluation": {
+    "domainId": "simulation",
+    "epochId": "epoch-a",
+    "tick": "0"
+  },
+  "radialGuides": {
+    "schema": "catalyst.radial-guides/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "guideSetId": "guides-a",
+    "revision": "3",
+    "centerMeters": [
+      0,
+      0,
+      0
+    ],
+    "measure": "radiusFromDeclaredCenter",
+    "lengthUnit": "meter",
+    "levels": [
+      {
+        "guideId": "outerCore",
+        "name": "outerCore",
+        "radiusMeters": 350
+      },
+      {
+        "guideId": "caveMin",
+        "name": "caveMin",
+        "radiusMeters": 430
+      },
+      {
+        "guideId": "caveMax",
+        "name": "caveMax",
+        "radiusMeters": 570
+      },
+      {
+        "guideId": "surfaceMin",
+        "name": "surfaceMin",
+        "radiusMeters": 580
+      },
+      {
+        "guideId": "surfaceMax",
+        "name": "surfaceMax",
+        "radiusMeters": 640
+      },
+      {
+        "guideId": "oxygenMax",
+        "name": "oxygenMax",
+        "radiusMeters": 800
+      }
+    ],
+    "bands": [
+      {
+        "bandId": "caves",
+        "name": "caves",
+        "minGuideId": "caveMin",
+        "maxGuideId": "caveMax",
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0,
+        "fadePlacement": "inside",
+        "curve": "smoothstep"
+      },
+      {
+        "bandId": "surface",
+        "name": "surface",
+        "minGuideId": "surfaceMin",
+        "maxGuideId": "surfaceMax",
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0,
+        "fadePlacement": "inside",
+        "curve": "smoothstep"
+      }
+    ]
+  },
+  "geology": {
+    "schema": "catalyst.geological-regions/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "regionSetId": "geology-a",
+    "revision": "4",
+    "regions": [
+      {
+        "regionId": "region-0",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -800.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -793.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-1",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -793.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -787.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-2",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -787.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -781.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-3",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -781.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -775.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-4",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -775.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -768.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-5",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -768.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -762.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-6",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -762.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -756.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-7",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -756.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -750.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-8",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -750.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -743.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-9",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -743.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -737.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-10",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -737.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -731.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-11",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -731.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -725.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-12",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -725.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -718.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-13",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -718.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -712.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-14",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -712.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -706.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-15",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -706.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -700.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-16",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -700.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -693.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-17",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -693.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -687.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-18",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -687.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -681.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-19",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -681.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -675.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-20",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -675.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -668.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-21",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -668.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -662.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-22",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -662.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -656.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-23",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -656.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -650.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-24",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -650.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -643.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-25",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -643.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -637.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-26",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -637.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -631.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-27",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -631.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -625.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-28",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -625.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -618.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-29",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -618.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -612.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-30",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -612.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -606.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-31",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -606.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -600.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-32",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -600.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -593.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-33",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -593.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -587.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-34",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -587.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -581.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-35",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -581.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -575.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-36",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -575.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -568.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-37",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -568.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -562.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-38",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -562.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -556.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-39",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -556.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -550.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-40",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -550.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -543.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-41",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -543.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -537.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-42",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -537.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -531.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-43",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -531.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -525.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-44",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -525.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -518.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-45",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -518.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -512.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-46",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -512.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -506.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-47",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -506.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -500.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-48",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -500.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -493.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-49",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -493.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -487.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-50",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -487.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -481.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-51",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -481.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -475.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-52",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -475.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -468.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-53",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -468.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -462.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-54",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -462.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -456.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-55",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -456.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -450.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-56",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -450.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -443.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-57",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -443.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -437.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-58",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -437.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -431.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-59",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -431.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -425.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-60",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -425.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -418.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-61",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -418.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -412.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-62",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -412.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -406.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-63",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -406.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -400.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-64",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -400.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -393.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-65",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -393.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -387.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-66",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -387.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -381.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-67",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -381.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -375.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-68",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -375.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -368.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-69",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -368.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -362.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-70",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -362.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -356.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-71",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -356.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -350.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-72",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -350.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -343.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-73",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -343.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -337.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-74",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -337.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -331.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-75",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -331.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -325.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-76",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -325.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -318.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-77",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -318.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -312.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-78",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -312.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -306.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-79",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -306.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -300.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-80",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -300.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -293.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-81",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -293.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -287.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-82",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -287.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -281.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-83",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -281.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -275.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-84",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -275.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -268.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-85",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -268.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -262.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-86",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -262.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -256.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-87",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -256.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -250.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-88",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -250.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -243.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-89",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -243.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -237.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-90",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -237.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -231.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-91",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -231.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -225.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-92",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -225.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -218.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-93",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -218.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -212.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-94",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -212.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -206.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-95",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -206.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -200.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-96",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -200.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -193.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-97",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -193.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -187.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-98",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -187.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -181.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-99",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -181.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -175.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-100",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -175.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -168.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-101",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -168.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -162.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-102",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -162.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -156.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-103",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -156.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -150.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-104",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -150.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -143.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-105",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -143.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -137.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-106",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -137.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -131.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-107",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -131.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -125.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-108",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -125.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -118.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-109",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -118.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -112.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-110",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -112.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -106.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-111",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -106.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -100.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-112",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -100.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -93.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-113",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -93.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -87.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-114",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -87.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -81.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-115",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -81.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -75.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-116",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -75.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -68.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-117",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -68.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -62.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-118",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -62.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -56.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-119",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -56.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -50.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-120",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -50.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -43.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-121",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -43.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -37.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-122",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -37.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -31.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-123",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -31.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -25.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-124",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -25.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -18.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-125",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -18.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -12.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-126",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -12.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            -6.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-127",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -6.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            0.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-128",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            0.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            6.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-129",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            6.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            12.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-130",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            12.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            18.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-131",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            18.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            25.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-132",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            25.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            31.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-133",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            31.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            37.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-134",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            37.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            43.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-135",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            43.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            50.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-136",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            50.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            56.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-137",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            56.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            62.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-138",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            62.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            68.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-139",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            68.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            75.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-140",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            75.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            81.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-141",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            81.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            87.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-142",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            87.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            93.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-143",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            93.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            100.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-144",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            100.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            106.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-145",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            106.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            112.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-146",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            112.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            118.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-147",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            118.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            125.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-148",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            125.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            131.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-149",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            131.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            137.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-150",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            137.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            143.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-151",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            143.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            150.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-152",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            150.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            156.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-153",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            156.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            162.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-154",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            162.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            168.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-155",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            168.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            175.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-156",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            175.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            181.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-157",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            181.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            187.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-158",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            187.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            193.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-159",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            193.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            200.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-160",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            200.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            206.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-161",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            206.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            212.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-162",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            212.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            218.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-163",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            218.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            225.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-164",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            225.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            231.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-165",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            231.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            237.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-166",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            237.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            243.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-167",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            243.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            250.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-168",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            250.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            256.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-169",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            256.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            262.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-170",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            262.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            268.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-171",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            268.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            275.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-172",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            275.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            281.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-173",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            281.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            287.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-174",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            287.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            293.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-175",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            293.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            300.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-176",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            300.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            306.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-177",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            306.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            312.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-178",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            312.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            318.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-179",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            318.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            325.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-180",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            325.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            331.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-181",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            331.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            337.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-182",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            337.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            343.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-183",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            343.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            350.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-184",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            350.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            356.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-185",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            356.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            362.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-186",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            362.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            368.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-187",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            368.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            375.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-188",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            375.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            381.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-189",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            381.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            387.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-190",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            387.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            393.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-191",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            393.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            400.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-192",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            400.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            406.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-193",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            406.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            412.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-194",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            412.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            418.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-195",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            418.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            425.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-196",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            425.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            431.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-197",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            431.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            437.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-198",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            437.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            443.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-199",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            443.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            450.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-200",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            450.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            456.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-201",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            456.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            462.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-202",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            462.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            468.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-203",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            468.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            475.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-204",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            475.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            481.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-205",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            481.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            487.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-206",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            487.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            493.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-207",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            493.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            500.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-208",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            500.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            506.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-209",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            506.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            512.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-210",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            512.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            518.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-211",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            518.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            525.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-212",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            525.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            531.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-213",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            531.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            537.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-214",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            537.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            543.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-215",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            543.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            550.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-216",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            550.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            556.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-217",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            556.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            562.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-218",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            562.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            568.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-219",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            568.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            575.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-220",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            575.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            581.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-221",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            581.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            587.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-222",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            587.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            593.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-223",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            593.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            600.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-224",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            600.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            606.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-225",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            606.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            612.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-226",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            612.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            618.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-227",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            618.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            625.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-228",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            625.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            631.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-229",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            631.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            637.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-230",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            637.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            643.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-231",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            643.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            650.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-232",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            650.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            656.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-233",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            656.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            662.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-234",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            662.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            668.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-235",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            668.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            675.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-236",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            675.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            681.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-237",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            681.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            687.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-238",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            687.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            693.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-239",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            693.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            700.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-240",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            700.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            706.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-241",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            706.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            712.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-242",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            712.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            718.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-243",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            718.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            725.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-244",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            725.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            731.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-245",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            731.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            737.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-246",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            737.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            743.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-247",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            743.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            750.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-248",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            750.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            756.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-249",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            756.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            762.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-250",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            762.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            768.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-251",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            768.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            775.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-252",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            775.0,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            781.25,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-253",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            781.25,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            787.5,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-254",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            787.5,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            793.75,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      },
+      {
+        "regionId": "region-255",
+        "domainBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            793.75,
+            -810,
+            -810
+          ],
+          "maxMeters": [
+            800.0,
+            810,
+            810
+          ]
+        },
+        "materialId": "basalt",
+        "structuralOriginMeters": [
+          0,
+          0,
+          0
+        ],
+        "formation": {
+          "operatorId": "catalyst.formation.radial-surface/draft",
+          "bandId": "surface",
+          "levelFraction": 0.3333333333333333,
+          "noise": {
+            "operatorId": "catalyst.noise.none/draft"
+          }
+        }
+      }
+    ],
+    "contacts": [],
+    "sharedFeatures": [],
+    "featureOrder": [],
+    "uncoveredRegionPolicy": "foundation"
+  },
+  "editPayloadRefs": [],
+  "editPlan": {
+    "schema": "catalyst.bounded-edit-plan/draft",
+    "context": {
+      "bodyId": "moon-a",
+      "bodyFrameId": "moon-fixed",
+      "definitionRevision": "12"
+    },
+    "editPlanId": "edits-a",
+    "revision": "6",
+    "baseFormationRevision": "4",
+    "baselineSceneToken": "formation-a",
+    "edits": []
+  },
+  "foundation": {
+    "radiusGuideId": "surfaceMin",
+    "materialId": "foundation-rock"
+  },
+  "profile": {
+    "profileId": "reference-owned",
+    "lowering": "ownedComposite",
+    "numericProfileId": "catalyst.reference.float64/draft",
+    "channels": [
+      "geometry",
+      "surface",
+      "metadata"
+    ],
+    "boundsPaddingMeters": 2
+  },
+  "maxEnvelopeRadiusMeters": 810
+}

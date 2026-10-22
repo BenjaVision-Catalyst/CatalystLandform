@@ -1,0 +1,132 @@
+{
+  "schema": "catalyst.bounded-edit-payload/draft",
+  "recordId": "bound-sampled-capture",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "numericProfileId": "catalyst.vpp-sampled.float32/draft",
+  "semantics": "singleContribution",
+  "contributionClip": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -1.0,
+      -1.0,
+      597.0
+    ],
+    "maxMeters": [
+      17.0,
+      9.0,
+      607.0
+    ]
+  },
+  "sampleFootprint": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -8.0,
+      -8.0,
+      590.0
+    ],
+    "maxMeters": [
+      24.0,
+      16.0,
+      614.0
+    ]
+  },
+  "readFootprint": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -8.0,
+      -8.0,
+      590.0
+    ],
+    "maxMeters": [
+      24.0,
+      16.0,
+      614.0
+    ]
+  },
+  "dirtyBounds": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -2.0,
+      -2.0,
+      596.0
+    ],
+    "maxMeters": [
+      18.0,
+      10.0,
+      608.0
+    ]
+  },
+  "evaluationHaloMeters": 1,
+  "capture": {
+    "kind": "predecessorDependent",
+    "sceneToken": "formation-a",
+    "evaluation": {
+      "domainId": "simulation",
+      "epochId": "epoch-a",
+      "tick": "0"
+    },
+    "readRevisions": [
+      {
+        "cellId": "left",
+        "revision": "3"
+      },
+      {
+        "cellId": "right",
+        "revision": "3"
+      }
+    ]
+  },
+  "representation": "sampled",
+  "channels": [
+    "geometry"
+  ],
+  "surfacePolicy": "preserve",
+  "field": {
+    "storage": "sparseMaskedFloat32",
+    "data": {
+      "payloadId": "sha256:6c47818e845882fbd60e1fc25509e2eea01c0aeb8684ecc6a1249bccbbb54a5a",
+      "mediaType": "application/octet-stream",
+      "codecId": "catalyst.bounded-edit.masked-float32-le/draft",
+      "decodedBytes": "8606",
+      "dependencyRefs": []
+    },
+    "originMeters": [
+      0.0,
+      0.0,
+      598.0
+    ],
+    "rotationXYZW": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "spacingMeters": 1.0,
+    "chunkDomain": {
+      "minInclusive": [
+        -1,
+        -1,
+        -1
+      ],
+      "maxExclusive": [
+        3,
+        2,
+        2
+      ]
+    },
+    "chunkCount": 2,
+    "chunkSide": 8,
+    "sampleOrder": "xFastest",
+    "distanceUnit": "gridCell",
+    "interpolation": "vppSampledFloat32NoFMA",
+    "validity": "perChannel512BitMask",
+    "removalConvention": "signedMaxArgumentRestoreBeforeInterpolation",
+    "blend": "remove",
+    "applyOnVoid": false,
+    "bridgeId": "catalyst.bridge.meter64-cell32/draft"
+  }
+}

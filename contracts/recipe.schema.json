@@ -1,0 +1,2336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:catalyst:landform:recipe:draft",
+  "title": "Catalyst RadialGuide geological region and bounded edit recipes draft",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/RadialGuideSet"
+    },
+    {
+      "$ref": "#/$defs/GeologicalRegionSet"
+    },
+    {
+      "$ref": "#/$defs/BoundedEditPlan"
+    },
+    {
+      "$ref": "#/$defs/TerrainRecipe"
+    },
+    {
+      "$ref": "#/$defs/CompiledPlan"
+    },
+    {
+      "$ref": "#/$defs/CatalystBoundedEditPayload"
+    },
+    {
+      "$ref": "#/$defs/BoundedEditSubmission"
+    },
+    {
+      "$ref": "#/$defs/BoundedEditReceipt"
+    }
+  ],
+  "$defs": {
+    "Context": {
+      "type": "object",
+      "properties": {
+        "bodyId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "bodyFrameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "definitionRevision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        }
+      },
+      "required": [
+        "bodyId",
+        "bodyFrameId",
+        "definitionRevision"
+      ],
+      "additionalProperties": false
+    },
+    "Time": {
+      "type": "object",
+      "properties": {
+        "domainId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "tick": {
+          "type": "string",
+          "pattern": "^(0|-?[1-9][0-9]{0,18})$",
+          "format": "catalyst-int64"
+        }
+      },
+      "required": [
+        "domainId",
+        "epochId",
+        "tick"
+      ],
+      "additionalProperties": false
+    },
+    "Bounds": {
+      "type": "object",
+      "properties": {
+        "frameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "minMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "maxMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "frameId",
+        "minMeters",
+        "maxMeters"
+      ],
+      "additionalProperties": false
+    },
+    "Level": {
+      "type": "object",
+      "properties": {
+        "guideId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "radiusMeters": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "guideId",
+        "name",
+        "radiusMeters"
+      ],
+      "additionalProperties": false
+    },
+    "Band": {
+      "type": "object",
+      "properties": {
+        "bandId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "minGuideId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "maxGuideId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "lowerFadeMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "upperFadeMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "fadePlacement": {
+          "const": "inside"
+        },
+        "curve": {
+          "const": "smoothstep"
+        }
+      },
+      "required": [
+        "bandId",
+        "name",
+        "minGuideId",
+        "maxGuideId",
+        "lowerFadeMeters",
+        "upperFadeMeters",
+        "fadePlacement",
+        "curve"
+      ],
+      "additionalProperties": false
+    },
+    "RadialGuideSet": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.radial-guides/draft"
+        },
+        "context": {
+          "$ref": "#/$defs/Context"
+        },
+        "guideSetId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "centerMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "measure": {
+          "const": "radiusFromDeclaredCenter"
+        },
+        "lengthUnit": {
+          "const": "meter"
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Level"
+          },
+          "minItems": 1,
+          "maxItems": 4096
+        },
+        "bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Band"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        }
+      },
+      "required": [
+        "schema",
+        "context",
+        "guideSetId",
+        "revision",
+        "centerMeters",
+        "measure",
+        "lengthUnit",
+        "levels",
+        "bands"
+      ],
+      "additionalProperties": false
+    },
+    "Noise": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.noise.none/draft"
+            }
+          },
+          "required": [
+            "operatorId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.noise.value3d/draft"
+            },
+            "seed64": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$",
+              "format": "catalyst-uint64"
+            },
+            "frequencyPerMeter": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "amplitudeMeters": {
+              "type": "number",
+              "minimum": 0
+            },
+            "octaves": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 8
+            }
+          },
+          "required": [
+            "operatorId",
+            "seed64",
+            "frequencyPerMeter",
+            "amplitudeMeters",
+            "octaves"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Formation": {
+      "type": "object",
+      "properties": {
+        "operatorId": {
+          "const": "catalyst.formation.radial-surface/draft"
+        },
+        "bandId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "levelFraction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "noise": {
+          "$ref": "#/$defs/Noise"
+        }
+      },
+      "required": [
+        "operatorId",
+        "bandId",
+        "levelFraction",
+        "noise"
+      ],
+      "additionalProperties": false
+    },
+    "Region": {
+      "type": "object",
+      "properties": {
+        "regionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "domainBounds": {
+          "$ref": "#/$defs/Bounds"
+        },
+        "materialId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "structuralOriginMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "formation": {
+          "$ref": "#/$defs/Formation"
+        }
+      },
+      "required": [
+        "regionId",
+        "domainBounds",
+        "materialId",
+        "structuralOriginMeters",
+        "formation"
+      ],
+      "additionalProperties": false
+    },
+    "Contact": {
+      "type": "object",
+      "properties": {
+        "contactId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "operatorId": {
+          "const": "catalyst.contact.plane-partition/draft"
+        },
+        "negativeRegionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "positiveRegionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "normal": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "offsetMeters": {
+          "type": "number"
+        },
+        "equalityOwner": {
+          "enum": [
+            "negative",
+            "positive"
+          ]
+        }
+      },
+      "required": [
+        "contactId",
+        "operatorId",
+        "negativeRegionId",
+        "positiveRegionId",
+        "normal",
+        "offsetMeters",
+        "equalityOwner"
+      ],
+      "additionalProperties": false
+    },
+    "Cave": {
+      "type": "object",
+      "properties": {
+        "featureId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "operatorId": {
+          "const": "catalyst.feature.capsule-cave/draft"
+        },
+        "regionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9._:/-]+$"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "pointAMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "pointBMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "radiusMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "radialBinding": {
+          "type": "object",
+          "properties": {
+            "bandId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "use": {
+              "enum": [
+                "placementEnvelope",
+                "geometricConstraint"
+              ]
+            }
+          },
+          "required": [
+            "bandId",
+            "use"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "featureId",
+        "operatorId",
+        "regionIds",
+        "pointAMeters",
+        "pointBMeters",
+        "radiusMeters",
+        "radialBinding"
+      ],
+      "additionalProperties": false
+    },
+    "GeologicalRegionSet": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.geological-regions/draft"
+        },
+        "context": {
+          "$ref": "#/$defs/Context"
+        },
+        "regionSetId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Region"
+          },
+          "minItems": 1,
+          "maxItems": 4096
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Contact"
+          },
+          "minItems": 0,
+          "maxItems": 8192
+        },
+        "sharedFeatures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Cave"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "featureOrder": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9._:/-]+$"
+          },
+          "minItems": 0,
+          "maxItems": 10000,
+          "uniqueItems": true
+        },
+        "uncoveredRegionPolicy": {
+          "const": "foundation"
+        }
+      },
+      "required": [
+        "schema",
+        "context",
+        "regionSetId",
+        "revision",
+        "regions",
+        "contacts",
+        "sharedFeatures",
+        "featureOrder",
+        "uncoveredRegionPolicy"
+      ],
+      "additionalProperties": false
+    },
+    "EditOperation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.sphere-remove/draft"
+            },
+            "centerMeters": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "radiusMeters": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "operatorId",
+            "centerMeters",
+            "radiusMeters"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.sphere-add/draft"
+            },
+            "centerMeters": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "radiusMeters": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "materialId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "operatorId",
+            "centerMeters",
+            "radiusMeters",
+            "materialId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.paint-volume/draft"
+            },
+            "centerMeters": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "radiusMeters": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "materialId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "operatorId",
+            "centerMeters",
+            "radiusMeters",
+            "materialId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.bounded-payload/draft"
+            },
+            "payloadId": {
+              "type": "string",
+              "pattern": "^sha256:[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "operatorId",
+            "payloadId"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Recovery": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "policyId": {
+              "const": "catalyst.recovery.permanent/draft"
+            }
+          },
+          "required": [
+            "policyId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "policyId": {
+              "const": "catalyst.recovery.linear-field/draft"
+            },
+            "start": {
+              "$ref": "#/$defs/Time"
+            },
+            "end": {
+              "$ref": "#/$defs/Time"
+            },
+            "channels": {
+              "const": [
+                "geometry"
+              ]
+            },
+            "validityPolicy": {
+              "const": "finiteOnly"
+            }
+          },
+          "required": [
+            "policyId",
+            "start",
+            "end",
+            "channels",
+            "validityPolicy"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "policyId": {
+              "const": "catalyst.recovery.linear-sampled-field/draft"
+            },
+            "start": {
+              "$ref": "#/$defs/Time"
+            },
+            "end": {
+              "$ref": "#/$defs/Time"
+            },
+            "channels": {
+              "const": [
+                "geometry"
+              ]
+            },
+            "validityPolicy": {
+              "const": "finiteOnly"
+            }
+          },
+          "required": [
+            "policyId",
+            "start",
+            "end",
+            "channels",
+            "validityPolicy"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ProceduralPayloadOperation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.sphere-remove/draft"
+            },
+            "centerMeters": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "radiusMeters": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "operatorId",
+            "centerMeters",
+            "radiusMeters"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.sphere-add/draft"
+            },
+            "centerMeters": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "radiusMeters": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "materialId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "operatorId",
+            "centerMeters",
+            "radiusMeters",
+            "materialId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "operatorId": {
+              "const": "catalyst.edit.paint-volume/draft"
+            },
+            "centerMeters": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "radiusMeters": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "materialId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "operatorId",
+            "centerMeters",
+            "radiusMeters",
+            "materialId"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PayloadRef": {
+      "type": "object",
+      "properties": {
+        "payloadId": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "mediaType": {
+          "const": "application/json"
+        },
+        "codecId": {
+          "const": "catalyst.bounded-edit-payload.json/draft"
+        },
+        "decodedBytes": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "dependencyRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "payloadId",
+        "mediaType",
+        "codecId",
+        "decodedBytes",
+        "dependencyRefs"
+      ],
+      "additionalProperties": false
+    },
+    "PayloadReadRevision": {
+      "type": "object",
+      "properties": {
+        "cellId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        }
+      },
+      "required": [
+        "cellId",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "PayloadCapture": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "independent"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "predecessorDependent"
+            },
+            "sceneToken": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "evaluation": {
+              "$ref": "#/$defs/Time"
+            },
+            "readRevisions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/PayloadReadRevision"
+              },
+              "minItems": 1,
+              "maxItems": 10000
+            }
+          },
+          "required": [
+            "kind",
+            "sceneToken",
+            "evaluation",
+            "readRevisions"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DenseField": {
+      "type": "object",
+      "properties": {
+        "originMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "rotationXYZW": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "spacingMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "size": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 64
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "sampleOrder": {
+          "const": "xFastest"
+        },
+        "interpolation": {
+          "const": "trilinearFloat64"
+        },
+        "distanceUnit": {
+          "const": "meter"
+        },
+        "additive": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minItems": 8,
+          "maxItems": 262144
+        },
+        "removal": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minItems": 8,
+          "maxItems": 262144
+        },
+        "removalConvention": {
+          "const": "signedMaxArgument"
+        },
+        "blend": {
+          "enum": [
+            "add",
+            "remove",
+            "intersect",
+            "override"
+          ]
+        },
+        "applyOnVoid": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "originMeters",
+        "rotationXYZW",
+        "spacingMeters",
+        "size",
+        "sampleOrder",
+        "interpolation",
+        "distanceUnit",
+        "additive",
+        "removal",
+        "removalConvention",
+        "blend",
+        "applyOnVoid"
+      ],
+      "additionalProperties": false
+    },
+    "SampledBinaryRef": {
+      "type": "object",
+      "properties": {
+        "payloadId": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "mediaType": {
+          "const": "application/octet-stream"
+        },
+        "codecId": {
+          "const": "catalyst.bounded-edit.masked-float32-le/draft"
+        },
+        "decodedBytes": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "dependencyRefs": {
+          "const": []
+        }
+      },
+      "required": [
+        "payloadId",
+        "mediaType",
+        "codecId",
+        "decodedBytes",
+        "dependencyRefs"
+      ],
+      "additionalProperties": false
+    },
+    "SampledBinaryResource": {
+      "type": "object",
+      "properties": {
+        "ref": {
+          "$ref": "#/$defs/SampledBinaryRef"
+        },
+        "encodedBase64": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "ref",
+        "encodedBase64"
+      ],
+      "additionalProperties": false
+    },
+    "SparseSampledField": {
+      "type": "object",
+      "properties": {
+        "storage": {
+          "const": "sparseMaskedFloat32"
+        },
+        "data": {
+          "$ref": "#/$defs/SampledBinaryRef"
+        },
+        "originMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "rotationXYZW": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "spacingMeters": {
+          "type": "number",
+          "minimum": 9.5367431640625e-07,
+          "maximum": 1048576
+        },
+        "chunkDomain": {
+          "type": "object",
+          "properties": {
+            "minInclusive": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "maxExclusive": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": -2147483648,
+                "maximum": 2147483647
+              },
+              "minItems": 3,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "minInclusive",
+            "maxExclusive"
+          ],
+          "additionalProperties": false
+        },
+        "chunkCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4096
+        },
+        "chunkSide": {
+          "const": 8
+        },
+        "sampleOrder": {
+          "const": "xFastest"
+        },
+        "distanceUnit": {
+          "const": "gridCell"
+        },
+        "interpolation": {
+          "const": "vppSampledFloat32NoFMA"
+        },
+        "validity": {
+          "const": "perChannel512BitMask"
+        },
+        "removalConvention": {
+          "const": "signedMaxArgumentRestoreBeforeInterpolation"
+        },
+        "blend": {
+          "enum": [
+            "add",
+            "remove",
+            "intersect",
+            "override"
+          ]
+        },
+        "applyOnVoid": {
+          "type": "boolean"
+        },
+        "bridgeId": {
+          "const": "catalyst.bridge.meter64-cell32/draft"
+        }
+      },
+      "required": [
+        "storage",
+        "data",
+        "originMeters",
+        "rotationXYZW",
+        "spacingMeters",
+        "chunkDomain",
+        "chunkCount",
+        "chunkSide",
+        "sampleOrder",
+        "distanceUnit",
+        "interpolation",
+        "validity",
+        "removalConvention",
+        "blend",
+        "applyOnVoid",
+        "bridgeId"
+      ],
+      "additionalProperties": false
+    },
+    "CatalystBoundedEditPayload": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "catalyst.bounded-edit-payload/draft"
+            },
+            "recordId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "context": {
+              "$ref": "#/$defs/Context"
+            },
+            "numericProfileId": {
+              "const": "catalyst.reference.float64/draft"
+            },
+            "semantics": {
+              "const": "singleContribution"
+            },
+            "contributionClip": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "sampleFootprint": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "readFootprint": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "dirtyBounds": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "evaluationHaloMeters": {
+              "type": "number",
+              "minimum": 0
+            },
+            "capture": {
+              "$ref": "#/$defs/PayloadCapture"
+            },
+            "representation": {
+              "const": "procedural"
+            },
+            "channels": {
+              "enum": [
+                [
+                  "geometry"
+                ],
+                [
+                  "geometry",
+                  "surface"
+                ],
+                [
+                  "surface"
+                ]
+              ]
+            },
+            "surfacePolicy": {
+              "const": "operatorDefined"
+            },
+            "procedure": {
+              "$ref": "#/$defs/ProceduralPayloadOperation"
+            }
+          },
+          "required": [
+            "schema",
+            "recordId",
+            "context",
+            "numericProfileId",
+            "semantics",
+            "contributionClip",
+            "sampleFootprint",
+            "readFootprint",
+            "dirtyBounds",
+            "evaluationHaloMeters",
+            "capture",
+            "representation",
+            "channels",
+            "surfacePolicy",
+            "procedure"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "catalyst.bounded-edit-payload/draft"
+            },
+            "recordId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "context": {
+              "$ref": "#/$defs/Context"
+            },
+            "numericProfileId": {
+              "const": "catalyst.reference.float64/draft"
+            },
+            "semantics": {
+              "const": "singleContribution"
+            },
+            "contributionClip": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "sampleFootprint": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "readFootprint": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "dirtyBounds": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "evaluationHaloMeters": {
+              "type": "number",
+              "minimum": 0
+            },
+            "capture": {
+              "$ref": "#/$defs/PayloadCapture"
+            },
+            "representation": {
+              "const": "sampled"
+            },
+            "channels": {
+              "const": [
+                "geometry"
+              ]
+            },
+            "surfacePolicy": {
+              "const": "preserve"
+            },
+            "field": {
+              "$ref": "#/$defs/DenseField"
+            }
+          },
+          "required": [
+            "schema",
+            "recordId",
+            "context",
+            "numericProfileId",
+            "semantics",
+            "contributionClip",
+            "sampleFootprint",
+            "readFootprint",
+            "dirtyBounds",
+            "evaluationHaloMeters",
+            "capture",
+            "representation",
+            "channels",
+            "surfacePolicy",
+            "field"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "catalyst.bounded-edit-payload/draft"
+            },
+            "recordId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "context": {
+              "$ref": "#/$defs/Context"
+            },
+            "numericProfileId": {
+              "const": "catalyst.vpp-sampled.float32/draft"
+            },
+            "semantics": {
+              "const": "singleContribution"
+            },
+            "contributionClip": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "sampleFootprint": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "readFootprint": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "dirtyBounds": {
+              "$ref": "#/$defs/Bounds"
+            },
+            "evaluationHaloMeters": {
+              "type": "number",
+              "minimum": 0
+            },
+            "capture": {
+              "$ref": "#/$defs/PayloadCapture"
+            },
+            "representation": {
+              "const": "sampled"
+            },
+            "channels": {
+              "const": [
+                "geometry"
+              ]
+            },
+            "surfacePolicy": {
+              "const": "preserve"
+            },
+            "field": {
+              "$ref": "#/$defs/SparseSampledField"
+            }
+          },
+          "required": [
+            "schema",
+            "recordId",
+            "context",
+            "numericProfileId",
+            "semantics",
+            "contributionClip",
+            "sampleFootprint",
+            "readFootprint",
+            "dirtyBounds",
+            "evaluationHaloMeters",
+            "capture",
+            "representation",
+            "channels",
+            "surfacePolicy",
+            "field"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "EditPayloadResource": {
+      "type": "object",
+      "properties": {
+        "ref": {
+          "$ref": "#/$defs/PayloadRef"
+        },
+        "document": {
+          "$ref": "#/$defs/CatalystBoundedEditPayload"
+        },
+        "encodedUtf8Base64": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SampledBinaryResource"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        }
+      },
+      "required": [
+        "ref",
+        "document",
+        "encodedUtf8Base64"
+      ],
+      "additionalProperties": false
+    },
+    "BoundedEditSubmission": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.bounded-edit-submission/draft"
+        },
+        "commandId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "payloadId": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "toolContractId": {
+          "enum": [
+            "fixedBrush",
+            "capturedSculpt"
+          ]
+        },
+        "context": {
+          "$ref": "#/$defs/Context"
+        },
+        "timeDomainId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "clockEpochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "requestedRecovery": {
+          "$ref": "#/$defs/Recovery"
+        }
+      },
+      "required": [
+        "schema",
+        "commandId",
+        "payloadId",
+        "toolContractId",
+        "context",
+        "timeDomainId",
+        "clockEpochId",
+        "requestedRecovery"
+      ],
+      "additionalProperties": false
+    },
+    "BoundedEditReceipt": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.bounded-edit-receipt/draft"
+        },
+        "commandId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "payloadId": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "orderKey": {
+          "type": "object",
+          "properties": {
+            "counter": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$",
+              "format": "catalyst-uint64"
+            },
+            "tieBreaker": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "counter",
+            "tieBreaker"
+          ],
+          "additionalProperties": false
+        },
+        "effectiveTime": {
+          "$ref": "#/$defs/Time"
+        },
+        "sceneToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "changedCells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PayloadReadRevision"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "recovery": {
+          "$ref": "#/$defs/Recovery"
+        }
+      },
+      "required": [
+        "schema",
+        "commandId",
+        "payloadId",
+        "orderKey",
+        "effectiveTime",
+        "sceneToken",
+        "changedCells",
+        "recovery"
+      ],
+      "additionalProperties": false
+    },
+    "Edit": {
+      "type": "object",
+      "properties": {
+        "editId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "orderKey": {
+          "type": "object",
+          "properties": {
+            "counter": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$",
+              "format": "catalyst-uint64"
+            },
+            "tieBreaker": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "counter",
+            "tieBreaker"
+          ],
+          "additionalProperties": false
+        },
+        "afterEditId": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTime": {
+          "$ref": "#/$defs/Time"
+        },
+        "attachment": {
+          "const": "bodyFixed"
+        },
+        "operation": {
+          "$ref": "#/$defs/EditOperation"
+        },
+        "recovery": {
+          "$ref": "#/$defs/Recovery"
+        },
+        "contributionClip": {
+          "$ref": "#/$defs/Bounds"
+        },
+        "readFootprint": {
+          "$ref": "#/$defs/Bounds"
+        },
+        "dirtyBounds": {
+          "$ref": "#/$defs/Bounds"
+        },
+        "evaluationHaloMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "hydrologyImpact": {
+          "enum": [
+            "none",
+            "reconcile"
+          ]
+        }
+      },
+      "required": [
+        "editId",
+        "orderKey",
+        "afterEditId",
+        "effectiveTime",
+        "attachment",
+        "operation",
+        "recovery",
+        "contributionClip",
+        "readFootprint",
+        "dirtyBounds",
+        "evaluationHaloMeters",
+        "hydrologyImpact"
+      ],
+      "additionalProperties": false
+    },
+    "BoundedEditPlan": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.bounded-edit-plan/draft"
+        },
+        "context": {
+          "$ref": "#/$defs/Context"
+        },
+        "editPlanId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "baseFormationRevision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "baselineSceneToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "edits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Edit"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        }
+      },
+      "required": [
+        "schema",
+        "context",
+        "editPlanId",
+        "revision",
+        "baseFormationRevision",
+        "baselineSceneToken",
+        "edits"
+      ],
+      "additionalProperties": false
+    },
+    "Profile": {
+      "type": "object",
+      "properties": {
+        "profileId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "lowering": {
+          "const": "ownedComposite"
+        },
+        "numericProfileId": {
+          "enum": [
+            "catalyst.reference.float64/draft",
+            "catalyst.composition.meter64-cell32/draft"
+          ]
+        },
+        "channels": {
+          "const": [
+            "geometry",
+            "surface",
+            "metadata"
+          ]
+        },
+        "boundsPaddingMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "profileId",
+        "lowering",
+        "numericProfileId",
+        "channels",
+        "boundsPaddingMeters"
+      ],
+      "additionalProperties": false
+    },
+    "EvaluateRecipeParameters": {
+      "type": "object",
+      "properties": {
+        "recipeSlotId": {
+          "const": "landformRecipe"
+        }
+      },
+      "required": [
+        "recipeSlotId"
+      ],
+      "additionalProperties": false
+    },
+    "TerrainRecipe": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.terrain-recipe/draft"
+        },
+        "recipeId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "context": {
+          "$ref": "#/$defs/Context"
+        },
+        "revision": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,19})$",
+          "format": "catalyst-uint64"
+        },
+        "sceneToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "evaluation": {
+          "$ref": "#/$defs/Time"
+        },
+        "radialGuides": {
+          "$ref": "#/$defs/RadialGuideSet"
+        },
+        "geology": {
+          "$ref": "#/$defs/GeologicalRegionSet"
+        },
+        "editPlan": {
+          "$ref": "#/$defs/BoundedEditPlan"
+        },
+        "editPayloadRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PayloadRef"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "foundation": {
+          "type": "object",
+          "properties": {
+            "radiusGuideId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "materialId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "radiusGuideId",
+            "materialId"
+          ],
+          "additionalProperties": false
+        },
+        "profile": {
+          "$ref": "#/$defs/Profile"
+        },
+        "maxEnvelopeRadiusMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "schema",
+        "recipeId",
+        "context",
+        "revision",
+        "sceneToken",
+        "evaluation",
+        "radialGuides",
+        "geology",
+        "editPlan",
+        "editPayloadRefs",
+        "foundation",
+        "profile",
+        "maxEnvelopeRadiusMeters"
+      ],
+      "additionalProperties": false
+    },
+    "ResolvedBand": {
+      "type": "object",
+      "properties": {
+        "bandId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "lowerMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "upperMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lowerFadeMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "upperFadeMeters": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "bandId",
+        "lowerMeters",
+        "upperMeters",
+        "lowerFadeMeters",
+        "upperFadeMeters"
+      ],
+      "additionalProperties": false
+    },
+    "CompiledRegion": {
+      "type": "object",
+      "properties": {
+        "regionId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "domainBounds": {
+          "$ref": "#/$defs/Bounds"
+        },
+        "materialId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "structuralOriginMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "radiusMeters": {
+          "type": "number",
+          "minimum": 0
+        },
+        "noise": {
+          "$ref": "#/$defs/Noise"
+        }
+      },
+      "required": [
+        "regionId",
+        "domainBounds",
+        "materialId",
+        "structuralOriginMeters",
+        "radiusMeters",
+        "noise"
+      ],
+      "additionalProperties": false
+    },
+    "CompiledCave": {
+      "type": "object",
+      "properties": {
+        "featureId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "regionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9._:/-]+$"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "pointAMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "pointBMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "radiusMeters": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "radialUse": {
+          "enum": [
+            "placementEnvelope",
+            "geometricConstraint"
+          ]
+        },
+        "band": {
+          "$ref": "#/$defs/ResolvedBand"
+        }
+      },
+      "required": [
+        "featureId",
+        "regionIds",
+        "pointAMeters",
+        "pointBMeters",
+        "radiusMeters",
+        "radialUse",
+        "band"
+      ],
+      "additionalProperties": false
+    },
+    "Mapping": {
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "kernelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "owner": {
+          "const": "CatalystComposite"
+        },
+        "stage": {
+          "enum": [
+            "foundation",
+            "regions",
+            "contacts",
+            "naturalFeatures",
+            "orderedEdits"
+          ]
+        },
+        "nativeCandidate": {
+          "enum": [
+            "VolumeGraphStamp",
+            "AdvancedNoise",
+            "VolumeSplineStamp",
+            "ShapeStamp",
+            "OverrideGraph"
+          ]
+        },
+        "nativeQualification": {
+          "const": "notEstablished"
+        }
+      },
+      "required": [
+        "sourceId",
+        "kernelId",
+        "owner",
+        "stage",
+        "nativeCandidate",
+        "nativeQualification"
+      ],
+      "additionalProperties": false
+    },
+    "CompiledPlan": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "catalyst.vpp-recipe-plan/draft"
+        },
+        "context": {
+          "$ref": "#/$defs/Context"
+        },
+        "sceneToken": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "sourceRecipeDigest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "evaluation": {
+          "$ref": "#/$defs/Time"
+        },
+        "numericProfileId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9._:/-]+$"
+        },
+        "centerMeters": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "geometryBounds": {
+          "$ref": "#/$defs/Bounds"
+        },
+        "foundation": {
+          "type": "object",
+          "properties": {
+            "radiusMeters": {
+              "type": "number",
+              "minimum": 0
+            },
+            "materialId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            }
+          },
+          "required": [
+            "radiusMeters",
+            "materialId"
+          ],
+          "additionalProperties": false
+        },
+        "resolvedBands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ResolvedBand"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CompiledRegion"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Contact"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CompiledCave"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "edits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Edit"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "editPayloads": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EditPayloadResource"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "cacheableEditPrefix": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9._:/-]+$"
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "guideConsumers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9._:/-]+$"
+            },
+            "minItems": 0,
+            "maxItems": 10000,
+            "uniqueItems": true
+          }
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Mapping"
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "vpp": {
+          "type": "object",
+          "properties": {
+            "runtime": {
+              "const": "FVoxelVolumeStampRuntime"
+            },
+            "layer": {
+              "const": "CatalystCommittedTerrain"
+            },
+            "priority": {
+              "const": 0
+            },
+            "queryPaths": {
+              "const": [
+                "bulk",
+                "sparse"
+              ]
+            },
+            "outputMode": {
+              "const": "finalComposed"
+            },
+            "applyStockBlendAfter": {
+              "const": false
+            },
+            "metersToUnrealUnits": {
+              "const": 100
+            },
+            "nativeReadiness": {
+              "const": "unverified"
+            }
+          },
+          "required": [
+            "runtime",
+            "layer",
+            "priority",
+            "queryPaths",
+            "outputMode",
+            "applyStockBlendAfter",
+            "metersToUnrealUnits",
+            "nativeReadiness"
+          ],
+          "additionalProperties": false
+        },
+        "activationRequirements": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "mesh",
+              "collision",
+              "water",
+              "ecosystem"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 10000,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema",
+        "context",
+        "sceneToken",
+        "sourceRecipeDigest",
+        "evaluation",
+        "numericProfileId",
+        "centerMeters",
+        "geometryBounds",
+        "foundation",
+        "resolvedBands",
+        "regions",
+        "contacts",
+        "features",
+        "edits",
+        "editPayloads",
+        "cacheableEditPrefix",
+        "guideConsumers",
+        "mappings",
+        "vpp",
+        "activationRequirements"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

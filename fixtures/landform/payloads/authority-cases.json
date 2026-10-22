@@ -1,0 +1,488 @@
+{
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "evaluation": {
+    "domainId": "simulation",
+    "epochId": "epoch-a",
+    "tick": "0"
+  },
+  "cells": {
+    "left": {
+      "revision": "3",
+      "bounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -10,
+          -10,
+          590
+        ],
+        "maxMeters": [
+          0,
+          10,
+          610
+        ]
+      }
+    },
+    "right": {
+      "revision": "3",
+      "bounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          0,
+          -10,
+          590
+        ],
+        "maxMeters": [
+          10,
+          10,
+          610
+        ]
+      }
+    },
+    "remote": {
+      "revision": "3",
+      "bounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          20,
+          -10,
+          590
+        ],
+        "maxMeters": [
+          40,
+          10,
+          610
+        ]
+      }
+    }
+  },
+  "commands": {
+    "procedural-remove": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "procedural-remove",
+      "payloadId": "sha256:0870b1e17448af06aaf2c94d7d40359831474c445166f84445bedce77ab4a66e",
+      "toolContractId": "fixedBrush",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "procedural-fill": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "procedural-fill",
+      "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f",
+      "toolContractId": "fixedBrush",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "procedural-paint": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "procedural-paint",
+      "payloadId": "sha256:a1b725a62ed57f6a19a9f763749c9d5ede92f13534b1bd85b3b1209bcfc7af6c",
+      "toolContractId": "fixedBrush",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "procedural-remote": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "procedural-remote",
+      "payloadId": "sha256:877486ba073c89938e564b4d1fb47a3e748b9184171bcbcf3feeb50ed1b3556e",
+      "toolContractId": "fixedBrush",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-remove": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-remove",
+      "payloadId": "sha256:da3685a8899ba29c2ca7378c5093666b9dc0eafd1b106824425a2b5dbe7d9e75",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-add": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-add",
+      "payloadId": "sha256:be73bf425cd0f1d3072dcac800ebeab18beb7669392a519ae009fb99f3fc5d0e",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-intersect": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-intersect",
+      "payloadId": "sha256:223bc65d4d6a8568ca7e6239883ae5474151882e6afc8a5839ab3ca71b4f307a",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-override": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-override",
+      "payloadId": "sha256:68aaa29106a8ee557dac0d42803c9917785c7238ede2175b87bee05b42588907",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-void": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-void",
+      "payloadId": "sha256:df5f683d8c2e6e976d4710bf25ce88672ecaf912c37b3d80688adc3a5c2532ab",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-rotated": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-rotated",
+      "payloadId": "sha256:ca601bee3d3a260ed905d0d795266d3adf5d6f78422e9f955c1b7d75543f6c4d",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-remote": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-remote",
+      "payloadId": "sha256:939a05fff3a992874f96b1ff1d65a775c908bd00936c944de26e175be9fe3ea3",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-recaptured": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-recaptured",
+      "payloadId": "sha256:bef6f677f4be2dad9e907d3c36f61dbd980018c3b0ed8e1b7529b7cdfa3ac777",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "sampled-partial-read": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-partial-read",
+      "payloadId": "sha256:968667a2fe8df9250dcb537f293b4681546cde7635e190f73dc36594d989dc59",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "reused-id": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-remove",
+      "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f",
+      "toolContractId": "fixedBrush",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "wrong-epoch": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "sampled-remove",
+      "payloadId": "sha256:da3685a8899ba29c2ca7378c5093666b9dc0eafd1b106824425a2b5dbe7d9e75",
+      "toolContractId": "capturedSculpt",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "old",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      }
+    },
+    "recover-material-addition": {
+      "schema": "catalyst.bounded-edit-submission/draft",
+      "commandId": "procedural-fill",
+      "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f",
+      "toolContractId": "fixedBrush",
+      "context": {
+        "bodyId": "moon-a",
+        "bodyFrameId": "moon-fixed",
+        "definitionRevision": "12"
+      },
+      "timeDomainId": "simulation",
+      "clockEpochId": "epoch-a",
+      "requestedRecovery": {
+        "policyId": "catalyst.recovery.linear-field/draft",
+        "start": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "end": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "100"
+        },
+        "channels": [
+          "geometry"
+        ],
+        "validityPolicy": "finiteOnly"
+      }
+    }
+  },
+  "cases": [
+    {
+      "name": "mixed-order",
+      "actions": [
+        {
+          "submit": "sampled-remove",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "procedural-fill",
+          "expect": "accepted",
+          "counter": 2
+        },
+        {
+          "submit": "procedural-paint",
+          "expect": "accepted",
+          "counter": 3
+        }
+      ]
+    },
+    {
+      "name": "stale-dependent-overlap",
+      "actions": [
+        {
+          "submit": "procedural-remove",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "sampled-remove",
+          "expect": "READ_CONFLICT"
+        }
+      ]
+    },
+    {
+      "name": "independent-overlap-serialized",
+      "actions": [
+        {
+          "submit": "procedural-remove",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "procedural-fill",
+          "expect": "accepted",
+          "counter": 2
+        }
+      ]
+    },
+    {
+      "name": "disjoint-change-does-not-stale-capture",
+      "actions": [
+        {
+          "submit": "procedural-remote",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "sampled-remove",
+          "expect": "accepted",
+          "counter": 2
+        }
+      ]
+    },
+    {
+      "name": "incomplete-read-set",
+      "actions": [
+        {
+          "submit": "sampled-partial-read",
+          "expect": "READ_SET_COVERAGE"
+        }
+      ]
+    },
+    {
+      "name": "time-dependent-staleness",
+      "actions": [
+        {
+          "advanceTick": "50"
+        },
+        {
+          "submit": "sampled-remove",
+          "expect": "TEMPORAL_STALE"
+        }
+      ]
+    },
+    {
+      "name": "retry-does-not-apply-twice",
+      "actions": [
+        {
+          "submit": "sampled-remove",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "procedural-fill",
+          "expect": "accepted",
+          "counter": 2
+        },
+        {
+          "submit": "sampled-remove",
+          "expect": "accepted",
+          "counter": 1
+        }
+      ]
+    },
+    {
+      "name": "same-id-different-command",
+      "actions": [
+        {
+          "submit": "sampled-remove",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "reused-id",
+          "expect": "IDEMPOTENCY_MISMATCH"
+        }
+      ]
+    },
+    {
+      "name": "fresh-recapture",
+      "actions": [
+        {
+          "submit": "procedural-remove",
+          "expect": "accepted",
+          "counter": 1
+        },
+        {
+          "submit": "sampled-recaptured",
+          "expect": "accepted",
+          "counter": 2
+        }
+      ]
+    },
+    {
+      "name": "epoch-barrier",
+      "actions": [
+        {
+          "submit": "wrong-epoch",
+          "expect": "CLOCK_EPOCH"
+        }
+      ]
+    },
+    {
+      "name": "recovery-channel-barrier",
+      "actions": [
+        {
+          "submit": "recover-material-addition",
+          "expect": "RECOVERY_CHANNEL_UNSUPPORTED"
+        }
+      ]
+    }
+  ]
+}

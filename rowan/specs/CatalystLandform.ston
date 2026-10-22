@@ -1,0 +1,18 @@
+RwLoadSpecificationV2 {
+    #specName : 'CatalystLandform',
+    #projectName : 'CatalystLandform',
+    #gitUrl : 'https://github.com/BenjaVision-Catalyst/CatalystLandform.git',
+    #revision : 'main',
+    #projectSpecFile : 'rowan/project.ston',
+    #componentNames : [ 'Core' ],
+    #groupNames : [ ],
+    #customConditionalAttributes : [ ],
+    #platformProperties : {
+        'gemstone' : {
+            'allusers' : {
+                #defaultSymbolDictName : 'UserGlobals'
+            }
+        }
+    },
+    #comment : 'Load the standalone Catalyst Landform core; NeoJSON is a prerequisite'
+}

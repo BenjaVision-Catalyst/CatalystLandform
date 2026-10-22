@@ -1,0 +1,66 @@
+{
+  "resources": [
+    "procedural-remove",
+    "procedural-fill",
+    "procedural-paint",
+    "procedural-remote",
+    "sampled-remove",
+    "sampled-add",
+    "sampled-intersect",
+    "sampled-override",
+    "sampled-void",
+    "sampled-rotated",
+    "sampled-remote",
+    "sampled-recaptured",
+    "sampled-partial-read"
+  ],
+  "mixedRecipes": [
+    "mixed-full",
+    "mixed-half",
+    "mixed-recovered",
+    "procedural-then-sampled"
+  ],
+  "negativeResources": [
+    {
+      "file": "negative/independent-sampled.json",
+      "code": "SAMPLED_CAPTURE_POLICY"
+    },
+    {
+      "file": "negative/sample-count.json",
+      "code": "GRID_SAMPLE_COUNT"
+    },
+    {
+      "file": "negative/missing-grid-halo.json",
+      "code": "GRID_INTERPOLATION_HALO"
+    },
+    {
+      "file": "negative/sample-footprint.json",
+      "code": "GRID_SAMPLE_FOOTPRINT"
+    },
+    {
+      "file": "negative/rotation.json",
+      "code": "GRID_ROTATION"
+    },
+    {
+      "file": "negative/frame.json",
+      "code": "PAYLOAD_FRAME"
+    },
+    {
+      "file": "negative/read-halo.json",
+      "code": "PAYLOAD_READ_SUPPORT"
+    },
+    {
+      "file": "negative/dirty-halo.json",
+      "code": "PAYLOAD_DIRTY_HALO"
+    },
+    {
+      "file": "negative/unknown-semantics.json",
+      "code": "SCHEMA"
+    },
+    {
+      "file": "negative/unsupported-sampled-paint.json",
+      "code": "SCHEMA"
+    }
+  ],
+  "authorityCases": 11
+}

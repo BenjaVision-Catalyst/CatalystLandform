@@ -1,0 +1,66 @@
+{
+  "resources": [
+    "constant-add",
+    "ramp-add",
+    "constant-remove",
+    "ramp-remove",
+    "constant-intersect",
+    "ramp-intersect",
+    "constant-override",
+    "ramp-override",
+    "void-intersect",
+    "rotated-remove",
+    "ramp-override-on-void"
+  ],
+  "recipes": [
+    "mixed-sampled-full",
+    "mixed-sampled-half",
+    "mixed-sampled-recovered"
+  ],
+  "negativeResources": [
+    {
+      "file": "negative/mode-disagreement.json",
+      "code": "SAMPLED_MODE_BINDING"
+    },
+    {
+      "file": "negative/spacing-disagreement.json",
+      "code": "SAMPLED_TRANSFORM_BINDING"
+    },
+    {
+      "file": "negative/domain-disagreement.json",
+      "code": "SAMPLED_DOMAIN_BINDING"
+    },
+    {
+      "file": "negative/count-disagreement.json",
+      "code": "SAMPLED_COUNT_BINDING"
+    },
+    {
+      "file": "negative/profile-relabel.json",
+      "code": "SCHEMA"
+    },
+    {
+      "file": "negative/wrong-bridge.json",
+      "code": "SCHEMA"
+    },
+    {
+      "file": "negative/native-material.json",
+      "code": "SCHEMA"
+    },
+    {
+      "file": "negative/independent-native.json",
+      "code": "SAMPLED_CAPTURE_POLICY"
+    },
+    {
+      "file": "negative/missing-binary.json",
+      "code": "PAYLOAD_DEPENDENCIES"
+    },
+    {
+      "file": "negative/binary-tamper.json",
+      "code": "SAMPLED_HASH"
+    },
+    {
+      "file": "negative/body-frame.json",
+      "code": "PAYLOAD_FRAME"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "landformRecipe": {
+    "payloadId": "sha256:9749a181163350ad3562449fe712f3476a509d8d6f136e35bab03ba92940a694",
+    "mediaType": "application/json",
+    "codecId": "catalyst.terrain-recipe.json/draft",
+    "decodedBytes": "10035",
+    "dependencyRefs": []
+  }
+}

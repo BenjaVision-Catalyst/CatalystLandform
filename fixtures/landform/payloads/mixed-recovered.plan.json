@@ -1,0 +1,1027 @@
+{
+  "schema": "catalyst.vpp-recipe-plan/draft",
+  "context": {
+    "bodyId": "moon-a",
+    "bodyFrameId": "moon-fixed",
+    "definitionRevision": "12"
+  },
+  "sceneToken": "scene-a",
+  "sourceRecipeDigest": "sha256:a17f86b9b77bf9eb8e43b7329be434b13993092f18133a1c0f0012d1423e4fe9",
+  "evaluation": {
+    "domainId": "simulation",
+    "epochId": "epoch-a",
+    "tick": "100"
+  },
+  "numericProfileId": "catalyst.reference.float64/draft",
+  "centerMeters": [
+    0,
+    0,
+    0
+  ],
+  "geometryBounds": {
+    "frameId": "moon-fixed",
+    "minMeters": [
+      -812,
+      -812,
+      -812
+    ],
+    "maxMeters": [
+      812,
+      812,
+      812
+    ]
+  },
+  "foundation": {
+    "radiusMeters": 580,
+    "materialId": "foundation-rock"
+  },
+  "resolvedBands": [
+    {
+      "bandId": "caves",
+      "lowerMeters": 430,
+      "upperMeters": 570,
+      "lowerFadeMeters": 0,
+      "upperFadeMeters": 0
+    },
+    {
+      "bandId": "surface",
+      "lowerMeters": 580,
+      "upperMeters": 640,
+      "lowerFadeMeters": 0,
+      "upperFadeMeters": 0
+    }
+  ],
+  "regions": [
+    {
+      "regionId": "basalt",
+      "domainBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -810,
+          -810,
+          -810
+        ],
+        "maxMeters": [
+          810,
+          810,
+          810
+        ]
+      },
+      "materialId": "basalt",
+      "structuralOriginMeters": [
+        0,
+        0,
+        0
+      ],
+      "radiusMeters": 600.0,
+      "noise": {
+        "operatorId": "catalyst.noise.none/draft"
+      }
+    },
+    {
+      "regionId": "limestone",
+      "domainBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -810,
+          -810,
+          -810
+        ],
+        "maxMeters": [
+          810,
+          810,
+          810
+        ]
+      },
+      "materialId": "limestone",
+      "structuralOriginMeters": [
+        0,
+        0,
+        0
+      ],
+      "radiusMeters": 600.0,
+      "noise": {
+        "operatorId": "catalyst.noise.none/draft"
+      }
+    }
+  ],
+  "contacts": [
+    {
+      "contactId": "contact-a",
+      "operatorId": "catalyst.contact.plane-partition/draft",
+      "negativeRegionId": "basalt",
+      "positiveRegionId": "limestone",
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "offsetMeters": 0,
+      "equalityOwner": "negative"
+    }
+  ],
+  "features": [
+    {
+      "featureId": "cave-cross-contact",
+      "regionIds": [
+        "basalt",
+        "limestone"
+      ],
+      "pointAMeters": [
+        -20,
+        0,
+        520
+      ],
+      "pointBMeters": [
+        20,
+        0,
+        520
+      ],
+      "radiusMeters": 8,
+      "radialUse": "placementEnvelope",
+      "band": {
+        "bandId": "caves",
+        "lowerMeters": 430,
+        "upperMeters": 570,
+        "lowerFadeMeters": 0,
+        "upperFadeMeters": 0
+      }
+    }
+  ],
+  "edits": [
+    {
+      "editId": "excavate",
+      "orderKey": {
+        "counter": "1",
+        "tieBreaker": "authority-model"
+      },
+      "afterEditId": null,
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.bounded-payload/draft",
+        "payloadId": "sha256:da3685a8899ba29c2ca7378c5093666b9dc0eafd1b106824425a2b5dbe7d9e75"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.linear-field/draft",
+        "start": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "0"
+        },
+        "end": {
+          "domainId": "simulation",
+          "epochId": "epoch-a",
+          "tick": "100"
+        },
+        "channels": [
+          "geometry"
+        ],
+        "validityPolicy": "finiteOnly"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    },
+    {
+      "editId": "fill",
+      "orderKey": {
+        "counter": "2",
+        "tieBreaker": "authority-model"
+      },
+      "afterEditId": "excavate",
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.bounded-payload/draft",
+        "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    },
+    {
+      "editId": "paint",
+      "orderKey": {
+        "counter": "3",
+        "tieBreaker": "authority-model"
+      },
+      "afterEditId": "fill",
+      "effectiveTime": {
+        "domainId": "simulation",
+        "epochId": "epoch-a",
+        "tick": "0"
+      },
+      "attachment": "bodyFixed",
+      "operation": {
+        "operatorId": "catalyst.edit.bounded-payload/draft",
+        "payloadId": "sha256:a1b725a62ed57f6a19a9f763749c9d5ede92f13534b1bd85b3b1209bcfc7af6c"
+      },
+      "recovery": {
+        "policyId": "catalyst.recovery.permanent/draft"
+      },
+      "contributionClip": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "readFootprint": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -3,
+          -3,
+          595
+        ],
+        "maxMeters": [
+          3,
+          3,
+          601
+        ]
+      },
+      "dirtyBounds": {
+        "frameId": "moon-fixed",
+        "minMeters": [
+          -4,
+          -4,
+          594
+        ],
+        "maxMeters": [
+          4,
+          4,
+          602
+        ]
+      },
+      "evaluationHaloMeters": 1,
+      "hydrologyImpact": "reconcile"
+    }
+  ],
+  "cacheableEditPrefix": [],
+  "editPayloads": [
+    {
+      "ref": {
+        "payloadId": "sha256:da3685a8899ba29c2ca7378c5093666b9dc0eafd1b106824425a2b5dbe7d9e75",
+        "mediaType": "application/json",
+        "codecId": "catalyst.bounded-edit-payload.json/draft",
+        "decodedBytes": "4136",
+        "dependencyRefs": []
+      },
+      "document": {
+        "schema": "catalyst.bounded-edit-payload/draft",
+        "recordId": "sampled-remove",
+        "context": {
+          "bodyId": "moon-a",
+          "bodyFrameId": "moon-fixed",
+          "definitionRevision": "12"
+        },
+        "numericProfileId": "catalyst.reference.float64/draft",
+        "semantics": "singleContribution",
+        "contributionClip": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "sampleFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "readFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "dirtyBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "evaluationHaloMeters": 1,
+        "capture": {
+          "kind": "predecessorDependent",
+          "sceneToken": "formation-a",
+          "evaluation": {
+            "domainId": "simulation",
+            "epochId": "epoch-a",
+            "tick": "0"
+          },
+          "readRevisions": [
+            {
+              "cellId": "left",
+              "revision": "3"
+            },
+            {
+              "cellId": "right",
+              "revision": "3"
+            }
+          ]
+        },
+        "representation": "sampled",
+        "channels": [
+          "geometry"
+        ],
+        "surfacePolicy": "preserve",
+        "field": {
+          "originMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "rotationXYZW": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "spacingMeters": 2,
+          "size": [
+            5,
+            5,
+            5
+          ],
+          "sampleOrder": "xFastest",
+          "interpolation": "trilinearFloat64",
+          "distanceUnit": "meter",
+          "additive": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "removal": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "removalConvention": "signedMaxArgument",
+          "blend": "remove",
+          "applyOnVoid": false
+        }
+      },
+      "encodedUtf8Base64": "ewogICJzY2hlbWEiOiAiY2F0YWx5c3QuYm91bmRlZC1lZGl0LXBheWxvYWQvZHJhZnQiLAogICJyZWNvcmRJZCI6ICJzYW1wbGVkLXJlbW92ZSIsCiAgImNvbnRleHQiOiB7CiAgICAiYm9keUlkIjogIm1vb24tYSIsCiAgICAiYm9keUZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAiZGVmaW5pdGlvblJldmlzaW9uIjogIjEyIgogIH0sCiAgIm51bWVyaWNQcm9maWxlSWQiOiAiY2F0YWx5c3QucmVmZXJlbmNlLmZsb2F0NjQvZHJhZnQiLAogICJzZW1hbnRpY3MiOiAic2luZ2xlQ29udHJpYnV0aW9uIiwKICAiY29udHJpYnV0aW9uQ2xpcCI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgLTMsCiAgICAgIC0zLAogICAgICA1OTUKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICAzLAogICAgICAzLAogICAgICA2MDEKICAgIF0KICB9LAogICJzYW1wbGVGb290cHJpbnQiOiB7CiAgICAiZnJhbWVJZCI6ICJtb29uLWZpeGVkIiwKICAgICJtaW5NZXRlcnMiOiBbCiAgICAgIC00LAogICAgICAtNCwKICAgICAgNTk0CiAgICBdLAogICAgIm1heE1ldGVycyI6IFsKICAgICAgNCwKICAgICAgNCwKICAgICAgNjAyCiAgICBdCiAgfSwKICAicmVhZEZvb3RwcmludCI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgLTQsCiAgICAgIC00LAogICAgICA1OTQKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICA0LAogICAgICA0LAogICAgICA2MDIKICAgIF0KICB9LAogICJkaXJ0eUJvdW5kcyI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgLTQsCiAgICAgIC00LAogICAgICA1OTQKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICA0LAogICAgICA0LAogICAgICA2MDIKICAgIF0KICB9LAogICJldmFsdWF0aW9uSGFsb01ldGVycyI6IDEsCiAgImNhcHR1cmUiOiB7CiAgICAia2luZCI6ICJwcmVkZWNlc3NvckRlcGVuZGVudCIsCiAgICAic2NlbmVUb2tlbiI6ICJmb3JtYXRpb24tYSIsCiAgICAiZXZhbHVhdGlvbiI6IHsKICAgICAgImRvbWFpbklkIjogInNpbXVsYXRpb24iLAogICAgICAiZXBvY2hJZCI6ICJlcG9jaC1hIiwKICAgICAgInRpY2siOiAiMCIKICAgIH0sCiAgICAicmVhZFJldmlzaW9ucyI6IFsKICAgICAgewogICAgICAgICJjZWxsSWQiOiAibGVmdCIsCiAgICAgICAgInJldmlzaW9uIjogIjMiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiY2VsbElkIjogInJpZ2h0IiwKICAgICAgICAicmV2aXNpb24iOiAiMyIKICAgICAgfQogICAgXQogIH0sCiAgInJlcHJlc2VudGF0aW9uIjogInNhbXBsZWQiLAogICJjaGFubmVscyI6IFsKICAgICJnZW9tZXRyeSIKICBdLAogICJzdXJmYWNlUG9saWN5IjogInByZXNlcnZlIiwKICAiZmllbGQiOiB7CiAgICAib3JpZ2luTWV0ZXJzIjogWwogICAgICAtNCwKICAgICAgLTQsCiAgICAgIDU5NAogICAgXSwKICAgICJyb3RhdGlvblhZWlciOiBbCiAgICAgIDAsCiAgICAgIDAsCiAgICAgIDAsCiAgICAgIDEKICAgIF0sCiAgICAic3BhY2luZ01ldGVycyI6IDIsCiAgICAic2l6ZSI6IFsKICAgICAgNSwKICAgICAgNSwKICAgICAgNQogICAgXSwKICAgICJzYW1wbGVPcmRlciI6ICJ4RmFzdGVzdCIsCiAgICAiaW50ZXJwb2xhdGlvbiI6ICJ0cmlsaW5lYXJGbG9hdDY0IiwKICAgICJkaXN0YW5jZVVuaXQiOiAibWV0ZXIiLAogICAgImFkZGl0aXZlIjogWwogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyLAogICAgICAyCiAgICBdLAogICAgInJlbW92YWwiOiBbCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIsCiAgICAgIDIKICAgIF0sCiAgICAicmVtb3ZhbENvbnZlbnRpb24iOiAic2lnbmVkTWF4QXJndW1lbnQiLAogICAgImJsZW5kIjogInJlbW92ZSIsCiAgICAiYXBwbHlPblZvaWQiOiBmYWxzZQogIH0KfQo="
+    },
+    {
+      "ref": {
+        "payloadId": "sha256:54883b984b45714d664a85901f4f369ee63d8af9edf206a4a30a8c039b5ff44f",
+        "mediaType": "application/json",
+        "codecId": "catalyst.bounded-edit-payload.json/draft",
+        "decodedBytes": "1331",
+        "dependencyRefs": []
+      },
+      "document": {
+        "schema": "catalyst.bounded-edit-payload/draft",
+        "recordId": "procedural-fill",
+        "context": {
+          "bodyId": "moon-a",
+          "bodyFrameId": "moon-fixed",
+          "definitionRevision": "12"
+        },
+        "numericProfileId": "catalyst.reference.float64/draft",
+        "semantics": "singleContribution",
+        "contributionClip": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "sampleFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "readFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "dirtyBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "evaluationHaloMeters": 1,
+        "capture": {
+          "kind": "independent"
+        },
+        "representation": "procedural",
+        "channels": [
+          "geometry",
+          "surface"
+        ],
+        "surfacePolicy": "operatorDefined",
+        "procedure": {
+          "operatorId": "catalyst.edit.sphere-add/draft",
+          "centerMeters": [
+            0,
+            0,
+            598
+          ],
+          "radiusMeters": 1,
+          "materialId": "fill-rock"
+        }
+      },
+      "encodedUtf8Base64": "ewogICJzY2hlbWEiOiAiY2F0YWx5c3QuYm91bmRlZC1lZGl0LXBheWxvYWQvZHJhZnQiLAogICJyZWNvcmRJZCI6ICJwcm9jZWR1cmFsLWZpbGwiLAogICJjb250ZXh0IjogewogICAgImJvZHlJZCI6ICJtb29uLWEiLAogICAgImJvZHlGcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgImRlZmluaXRpb25SZXZpc2lvbiI6ICIxMiIKICB9LAogICJudW1lcmljUHJvZmlsZUlkIjogImNhdGFseXN0LnJlZmVyZW5jZS5mbG9hdDY0L2RyYWZ0IiwKICAic2VtYW50aWNzIjogInNpbmdsZUNvbnRyaWJ1dGlvbiIsCiAgImNvbnRyaWJ1dGlvbkNsaXAiOiB7CiAgICAiZnJhbWVJZCI6ICJtb29uLWZpeGVkIiwKICAgICJtaW5NZXRlcnMiOiBbCiAgICAgIC0zLAogICAgICAtMywKICAgICAgNTk1CiAgICBdLAogICAgIm1heE1ldGVycyI6IFsKICAgICAgMywKICAgICAgMywKICAgICAgNjAxCiAgICBdCiAgfSwKICAic2FtcGxlRm9vdHByaW50IjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtMywKICAgICAgLTMsCiAgICAgIDU5NQogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDMsCiAgICAgIDMsCiAgICAgIDYwMQogICAgXQogIH0sCiAgInJlYWRGb290cHJpbnQiOiB7CiAgICAiZnJhbWVJZCI6ICJtb29uLWZpeGVkIiwKICAgICJtaW5NZXRlcnMiOiBbCiAgICAgIC0zLAogICAgICAtMywKICAgICAgNTk1CiAgICBdLAogICAgIm1heE1ldGVycyI6IFsKICAgICAgMywKICAgICAgMywKICAgICAgNjAxCiAgICBdCiAgfSwKICAiZGlydHlCb3VuZHMiOiB7CiAgICAiZnJhbWVJZCI6ICJtb29uLWZpeGVkIiwKICAgICJtaW5NZXRlcnMiOiBbCiAgICAgIC00LAogICAgICAtNCwKICAgICAgNTk0CiAgICBdLAogICAgIm1heE1ldGVycyI6IFsKICAgICAgNCwKICAgICAgNCwKICAgICAgNjAyCiAgICBdCiAgfSwKICAiZXZhbHVhdGlvbkhhbG9NZXRlcnMiOiAxLAogICJjYXB0dXJlIjogewogICAgImtpbmQiOiAiaW5kZXBlbmRlbnQiCiAgfSwKICAicmVwcmVzZW50YXRpb24iOiAicHJvY2VkdXJhbCIsCiAgImNoYW5uZWxzIjogWwogICAgImdlb21ldHJ5IiwKICAgICJzdXJmYWNlIgogIF0sCiAgInN1cmZhY2VQb2xpY3kiOiAib3BlcmF0b3JEZWZpbmVkIiwKICAicHJvY2VkdXJlIjogewogICAgIm9wZXJhdG9ySWQiOiAiY2F0YWx5c3QuZWRpdC5zcGhlcmUtYWRkL2RyYWZ0IiwKICAgICJjZW50ZXJNZXRlcnMiOiBbCiAgICAgIDAsCiAgICAgIDAsCiAgICAgIDU5OAogICAgXSwKICAgICJyYWRpdXNNZXRlcnMiOiAxLAogICAgIm1hdGVyaWFsSWQiOiAiZmlsbC1yb2NrIgogIH0KfQo="
+    },
+    {
+      "ref": {
+        "payloadId": "sha256:a1b725a62ed57f6a19a9f763749c9d5ede92f13534b1bd85b3b1209bcfc7af6c",
+        "mediaType": "application/json",
+        "codecId": "catalyst.bounded-edit-payload.json/draft",
+        "decodedBytes": "1319",
+        "dependencyRefs": []
+      },
+      "document": {
+        "schema": "catalyst.bounded-edit-payload/draft",
+        "recordId": "procedural-paint",
+        "context": {
+          "bodyId": "moon-a",
+          "bodyFrameId": "moon-fixed",
+          "definitionRevision": "12"
+        },
+        "numericProfileId": "catalyst.reference.float64/draft",
+        "semantics": "singleContribution",
+        "contributionClip": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "sampleFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "readFootprint": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -3,
+            -3,
+            595
+          ],
+          "maxMeters": [
+            3,
+            3,
+            601
+          ]
+        },
+        "dirtyBounds": {
+          "frameId": "moon-fixed",
+          "minMeters": [
+            -4,
+            -4,
+            594
+          ],
+          "maxMeters": [
+            4,
+            4,
+            602
+          ]
+        },
+        "evaluationHaloMeters": 1,
+        "capture": {
+          "kind": "independent"
+        },
+        "representation": "procedural",
+        "channels": [
+          "surface"
+        ],
+        "surfacePolicy": "operatorDefined",
+        "procedure": {
+          "operatorId": "catalyst.edit.paint-volume/draft",
+          "centerMeters": [
+            0,
+            0,
+            598
+          ],
+          "radiusMeters": 1,
+          "materialId": "blue-paint"
+        }
+      },
+      "encodedUtf8Base64": "ewogICJzY2hlbWEiOiAiY2F0YWx5c3QuYm91bmRlZC1lZGl0LXBheWxvYWQvZHJhZnQiLAogICJyZWNvcmRJZCI6ICJwcm9jZWR1cmFsLXBhaW50IiwKICAiY29udGV4dCI6IHsKICAgICJib2R5SWQiOiAibW9vbi1hIiwKICAgICJib2R5RnJhbWVJZCI6ICJtb29uLWZpeGVkIiwKICAgICJkZWZpbml0aW9uUmV2aXNpb24iOiAiMTIiCiAgfSwKICAibnVtZXJpY1Byb2ZpbGVJZCI6ICJjYXRhbHlzdC5yZWZlcmVuY2UuZmxvYXQ2NC9kcmFmdCIsCiAgInNlbWFudGljcyI6ICJzaW5nbGVDb250cmlidXRpb24iLAogICJjb250cmlidXRpb25DbGlwIjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtMywKICAgICAgLTMsCiAgICAgIDU5NQogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDMsCiAgICAgIDMsCiAgICAgIDYwMQogICAgXQogIH0sCiAgInNhbXBsZUZvb3RwcmludCI6IHsKICAgICJmcmFtZUlkIjogIm1vb24tZml4ZWQiLAogICAgIm1pbk1ldGVycyI6IFsKICAgICAgLTMsCiAgICAgIC0zLAogICAgICA1OTUKICAgIF0sCiAgICAibWF4TWV0ZXJzIjogWwogICAgICAzLAogICAgICAzLAogICAgICA2MDEKICAgIF0KICB9LAogICJyZWFkRm9vdHByaW50IjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtMywKICAgICAgLTMsCiAgICAgIDU5NQogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDMsCiAgICAgIDMsCiAgICAgIDYwMQogICAgXQogIH0sCiAgImRpcnR5Qm91bmRzIjogewogICAgImZyYW1lSWQiOiAibW9vbi1maXhlZCIsCiAgICAibWluTWV0ZXJzIjogWwogICAgICAtNCwKICAgICAgLTQsCiAgICAgIDU5NAogICAgXSwKICAgICJtYXhNZXRlcnMiOiBbCiAgICAgIDQsCiAgICAgIDQsCiAgICAgIDYwMgogICAgXQogIH0sCiAgImV2YWx1YXRpb25IYWxvTWV0ZXJzIjogMSwKICAiY2FwdHVyZSI6IHsKICAgICJraW5kIjogImluZGVwZW5kZW50IgogIH0sCiAgInJlcHJlc2VudGF0aW9uIjogInByb2NlZHVyYWwiLAogICJjaGFubmVscyI6IFsKICAgICJzdXJmYWNlIgogIF0sCiAgInN1cmZhY2VQb2xpY3kiOiAib3BlcmF0b3JEZWZpbmVkIiwKICAicHJvY2VkdXJlIjogewogICAgIm9wZXJhdG9ySWQiOiAiY2F0YWx5c3QuZWRpdC5wYWludC12b2x1bWUvZHJhZnQiLAogICAgImNlbnRlck1ldGVycyI6IFsKICAgICAgMCwKICAgICAgMCwKICAgICAgNTk4CiAgICBdLAogICAgInJhZGl1c01ldGVycyI6IDEsCiAgICAibWF0ZXJpYWxJZCI6ICJibHVlLXBhaW50IgogIH0KfQo="
+    }
+  ],
+  "guideConsumers": {
+    "caveMax": [
+      "caves"
+    ],
+    "caveMin": [
+      "caves"
+    ],
+    "caves": [
+      "cave-cross-contact"
+    ],
+    "outerCore": [],
+    "oxygenMax": [],
+    "surface": [
+      "basalt",
+      "limestone"
+    ],
+    "surfaceMax": [
+      "surface"
+    ],
+    "surfaceMin": [
+      "foundation",
+      "surface"
+    ]
+  },
+  "mappings": [
+    {
+      "sourceId": "foundation",
+      "kernelId": "catalyst.formation.sphere/draft",
+      "owner": "CatalystComposite",
+      "stage": "foundation",
+      "nativeCandidate": "VolumeGraphStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "basalt",
+      "kernelId": "catalyst.formation.radial-surface/draft",
+      "owner": "CatalystComposite",
+      "stage": "regions",
+      "nativeCandidate": "VolumeGraphStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "limestone",
+      "kernelId": "catalyst.formation.radial-surface/draft",
+      "owner": "CatalystComposite",
+      "stage": "regions",
+      "nativeCandidate": "VolumeGraphStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "contact-a",
+      "kernelId": "catalyst.contact.plane-partition/draft",
+      "owner": "CatalystComposite",
+      "stage": "contacts",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "cave-cross-contact",
+      "kernelId": "catalyst.feature.capsule-cave/draft",
+      "owner": "CatalystComposite",
+      "stage": "naturalFeatures",
+      "nativeCandidate": "VolumeSplineStamp",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "excavate",
+      "kernelId": "catalyst.edit.bounded-payload/draft",
+      "owner": "CatalystComposite",
+      "stage": "orderedEdits",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "fill",
+      "kernelId": "catalyst.edit.bounded-payload/draft",
+      "owner": "CatalystComposite",
+      "stage": "orderedEdits",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    },
+    {
+      "sourceId": "paint",
+      "kernelId": "catalyst.edit.bounded-payload/draft",
+      "owner": "CatalystComposite",
+      "stage": "orderedEdits",
+      "nativeCandidate": "OverrideGraph",
+      "nativeQualification": "notEstablished"
+    }
+  ],
+  "vpp": {
+    "runtime": "FVoxelVolumeStampRuntime",
+    "layer": "CatalystCommittedTerrain",
+    "priority": 0,
+    "queryPaths": [
+      "bulk",
+      "sparse"
+    ],
+    "outputMode": "finalComposed",
+    "applyStockBlendAfter": false,
+    "metersToUnrealUnits": 100,
+    "nativeReadiness": "unverified"
+  },
+  "activationRequirements": [
+    "mesh",
+    "collision",
+    "water",
+    "ecosystem"
+  ]
+}
